@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 20px">
+      <mat-card style="margin: 50px 0">
+        <mat-card-title class="alert  alert-primary" style="text-align: center">Đăng nhập</mat-card-title>
+        <form class="form-login" #f="ngForm" (ngSubmit)="f.form.valid&&ngSubmit()" novalidate>
+          <p>
+            <mat-error *ngIf=" status!='' " class="alert alert-primary">{{status}}</mat-error>
+          </p>
+          <!--UserName-->
+          <p>
+            <mat-form-field style="width: 400px" appearance="outline">
+              <mat-label>Tên đăng nhập:</mat-label>
+              <input matInput placeholder="Placeholder" name="username" [(ngModel)]="sigInForm.username"
+                     required #username="ngModel" minlength="3" maxlength="20">
+              <mat-error *ngIf="username.hasError('required')">Ô nhập tên đang bị bỏ trống, vui lòng điền!</mat-error>
+              <mat-error *ngIf="username.hasError('minlength')">Độ dài của tên phải là từ 3 đến 20 ký tự</mat-error>
+              <mat-icon matSuffix>account_circle</mat-icon>
+            </mat-form-field>
+          </p>
+          <!--        PASSWORD-->
+          <p>
+            <mat-form-field style="width: 400px" appearance="outline">
+              <mat-label>Password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="sigInForm.password"
+                     required #password="ngModel" minlength="6">
+              <mat-error *ngIf="password.hasError('required')">Chưa nhập password, mời nhập vào</mat-error>
+              <mat-error *ngIf="password.hasError('minlength')">Mật khẩu phải 6 kí tự trở lên</mat-error>
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                      [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <br>
+            <button mat-stroked-button color="primary" class="mat-raised-button ">Submit</button>
+          </p>
+        </form>
+      </mat-card>
+    </div>
+  </div>
+</div>
