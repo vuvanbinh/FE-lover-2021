@@ -1,1 +1,8 @@
-<p>list-user works!</p>
+<h1>list user</h1>
+<div *ngFor="let user of users" class="h1" >
+<div type="button" [routerLink]="['/user-detail',user.id]"  >
+<h3>{{user.username}}</h3><i class="bi bi-archive-fill"></i>
+
+</div>
+</div>
+

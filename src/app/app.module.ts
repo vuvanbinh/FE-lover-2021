@@ -13,12 +13,13 @@ import { ListComponent } from './compunent/list/list.component';
 import {MatMenuModule} from "@angular/material/menu";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
-import { LoginComponent } from './compunent/login/login.component';
 import { RegisterComponent } from './compunent/register/register.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { HomeComponent } from './compunent/home/home.component';
-import { ListuserComponent } from './compunent/user/listuser/listuser.component';
 import { ListUserComponent } from './compunent/user/list-user/list-user.component';
+import {HttpClientModule} from "@angular/common/http";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import { DetailUserComponent } from './compunent/user/detail-user/detail-user.component';
 
 @NgModule({
   declarations: [
@@ -27,23 +28,24 @@ import { ListUserComponent } from './compunent/user/list-user/list-user.componen
     FooterComponent,
     BannerComponent,
     ListComponent,
-    LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ListuserComponent,
-    ListUserComponent
+    ListUserComponent,
+    DetailUserComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    NgbModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatButtonModule,
-    ReactiveFormsModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        NgbModule,
+        MatMenuModule,
+        MatToolbarModule,
+        HttpClientModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        MatFormFieldModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
