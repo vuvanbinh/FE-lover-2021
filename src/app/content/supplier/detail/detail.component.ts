@@ -19,6 +19,8 @@ export class DetailComponent implements OnInit {
       // @ts-ignore
       this.id = paraMap.get('id');
       this.showEditSupplier(this.id);
+      this.getCount(this.id);
+
     })
   }
 
@@ -36,9 +38,15 @@ export class DetailComponent implements OnInit {
       this.supplierForm = new FormGroup({
         id: new FormControl(data.id),
         name: new FormControl(data.name),
-
-
       })
+
+    })
+  }
+
+  getCount(id:any) {
+    this.supplierService.getCount(id).subscribe((data) => {
+      this.supplier = data;
+      console.log(this.id)
 
     })
   }

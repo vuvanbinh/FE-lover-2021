@@ -17,4 +17,9 @@ export class SupplierService {
   }
   findById(id: number): Observable<Supplier> {
     return this.http.get<Supplier>(`${this.API_SUPPLIER}/${id}`);
-  }}
+  }
+
+  getCount(id:any): Observable<Supplier[]> {
+    return  this.http.get<Supplier[]>(this.API_SUPPLIER+ `/count`+`/${id}`);
+  }
+}
