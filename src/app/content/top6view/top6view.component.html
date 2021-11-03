@@ -1,0 +1,16 @@
+<div *ngFor="let suppl of suppliers" class="h1">
+
+<div type="button" [routerLink]="['/detail',suppl.id]">
+  <figure class="figure">
+    <img src="{{suppl.user.avatar}}" class="figure-img img-fluid rounded" alt="lỗi rồi đcm">
+    <figcaption class="figure-caption"></figcaption>
+  </figure>
+  <div>
+    <p>{{suppl.name}}</p>
+  </div>
+    <div>
+      <p>{{suppl.count}} </p>
+    </div>
+  </div>
+
+</div>

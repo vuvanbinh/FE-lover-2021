@@ -17,6 +17,8 @@ import {MatButtonModule} from "@angular/material/button";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './content/home/home.component';
 import {httpInterceptorProviders} from "./security/auth.interceptor";
+import { Top6viewComponent } from './content/top6view/top6view.component';
+import { DetailComponent } from './content/supplier/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import {httpInterceptorProviders} from "./security/auth.interceptor";
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    Top6viewComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,

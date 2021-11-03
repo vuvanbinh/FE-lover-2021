@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {environment} from "../../../environments/environment.prod";
 import {HttpClient} from "@angular/common/http";
-import {SignUpForm} from "../../model/SignUpForm";
 import {Observable} from "rxjs";
-import {SignInForm} from "../../model/SignInForm";
+import {SignInForm} from "../../model/signIn/SignInForm";
+import {SignUpForm} from "../../model/signUp/SignUpForm";
 
 
 @Injectable({
