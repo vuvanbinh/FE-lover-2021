@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-supplier.component.scss']
 })
 export class CreateSupplierComponent implements OnInit {
+  ccdvForm: any;
+  city: any;
 
   constructor() { }
 
