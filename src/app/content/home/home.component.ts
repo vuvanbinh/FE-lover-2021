@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {SupplierService} from "../../service/supplier/supplier.service";
-import {Supplier} from "../../model/Supplier";
 import {PageEvent} from "@angular/material/paginator";
 
 @Component({
