@@ -6,6 +6,7 @@ import {HomeComponent} from "./content/home/home.component";
 import {CreateComponent} from "./content/supplier/create/create.component";
 import {CreateServiceComponent} from "./content/services/create-service/create-service.component";
 import {DetailSupplierComponent} from "./content/supplier/detail-supplier/detail-supplier.component";
+import {AdminPageComponent} from "./content/admin/admin-page/admin-page.component";
 
 const routes: Routes = [
   {path:'register', component:RegisterComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'create-supplier', component:CreateComponent},
   {path:'create-services',component:CreateServiceComponent},
-  {path:'detail-supplier/:id',component:DetailSupplierComponent}
+  {path:'detail-supplier/:id',component:DetailSupplierComponent},
+  {path:'admin',component:AdminPageComponent}
 
 
 

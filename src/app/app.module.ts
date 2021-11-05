@@ -28,6 +28,8 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import { CreateServiceComponent } from './content/services/create-service/create-service.component';
 import { DetailSupplierComponent } from './content/supplier/detail-supplier/detail-supplier.component';
+import { AdminPageComponent } from './content/admin/admin-page/admin-page.component';
+import {MatTableModule} from "@angular/material/table";
 
 @NgModule({
   declarations: [
@@ -40,27 +42,29 @@ import { DetailSupplierComponent } from './content/supplier/detail-supplier/deta
     CreateComponent,
     UploadAvatarComponent,
     CreateServiceComponent,
-    DetailSupplierComponent
+    DetailSupplierComponent,
+    AdminPageComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        MatIconModule,
-        FormsModule,
-        MatFormFieldModule,
-        HttpClientModule,
-        MatCardModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        MatButtonModule,
-        MatSelectModule,
-        MatOptionModule,
-        AngularFireStorageModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig),
-        MatProgressSpinnerModule,
-        MatPaginatorModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    FormsModule,
+    MatFormFieldModule,
+    HttpClientModule,
+    MatCardModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatOptionModule,
+    AngularFireStorageModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    MatProgressSpinnerModule,
+    MatPaginatorModule,
+    MatTableModule
+  ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
