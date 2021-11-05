@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {SupplierService} from "../../service/supplier/supplier.service";
+import {Supplier} from "../../model/Supplier";
+import {PageEvent} from "@angular/material/paginator";
 
 @Component({
   selector: 'app-home',
@@ -6,12 +9,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  name: any;
+  suppliers:any;
+  totalElements?:number=0;
 
-  constructor() { }
+  constructor(private supplierService:SupplierService) { }
 
   ngOnInit(): void {
-    this.name=window.localStorage.getItem('NAME_KEY');
+    this.pageFindAll({page:0 ,size:12})
   }
+
+  pageFindAll(pageSize?:any){
+    this.supplierService.pageFindAll(pageSize).subscribe(data =>{
+      this.suppliers =  data['content'];
+      this.totalElements = data['totalElements'];
+    })
+  }
+
+
+  nextPage(event: PageEvent){
+    const  pageAndSize:any={};
+    pageAndSize['page'] = event.pageIndex.toString();
+    pageAndSize['size'] = event.pageSize.toString();
+    this.pageFindAll(pageAndSize);
+  }
+
+  getRandomInt(max:any) {    return Math.floor(Math.random() * Math.floor(max));  }
+
+
 
 }

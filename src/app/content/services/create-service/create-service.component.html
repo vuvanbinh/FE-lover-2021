@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 20px">
+      <mat-card style="margin: 50px 0;text-align: center">
+        <mat-card-title class="alert alert-primary" style="font-size: 30px">Đăng ký dịch vụ cung cấp</mat-card-title>
+        <mat-error *ngIf="status!='' ">{{status}}</mat-error>
+        <div style="margin-top: 20px">
+          <form #f="ngForm" (ngSubmit)="submit()" >
+            <table>
+              <tr>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Tên dịch vụ</mat-label>
+                    <mat-select [(value)]="services.name" >
+                      <div *ngFor="let ser of serviceName">
+                        <mat-option value="{{ser}}">{{ser}}</mat-option>
+                      </div>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Loại dịch vụ</mat-label>
+                    <mat-select [(value)]="services.serviceType" >
+                      <div *ngFor="let ser of serviceType">
+                        <mat-option value="{{ser}}">{{ser}}</mat-option>
+                      </div>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field style="width: 300px" appearance="outline">
+                    <mat-label>Nhập giá tiền của dịch vụ:</mat-label>
+                    <input type="number" matInput name="yearOfBirth" [(ngModel)]="services.price">
+                  </mat-form-field>
+                </td>
+                <td><button mat-stroked-button color="primary" class="mat-raised-button">Đăng ký dịch vụ</button></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,18 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" routerLink="">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a *ngIf="(role==='USER')" class="nav-link active" aria-current="page" routerLink="create-supplier">Trở thành người cung cấp</a>
         </li>
+        <li class="nav-item">
+          <a *ngIf="checkLogin" class="nav-link active" aria-current="page" routerLink="create-services">Đăng ký dịch vụ cung cấp</a>
+        </li>
+
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
@@ -27,16 +31,17 @@
           <a class="nav-link disabled">Disabled</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+<!--      <form class="d-flex">-->
+<!--        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--        <button class="btn btn-outline-success" type="submit">Search</button>-->
+<!--      </form>-->
 
-        <a *ngIf="checkLogin" class="nav-link active" routerLink="changeAvatar">
-          <img [src]="avatar" alt="" width="60px" height="60px" style="margin-left: -1px ;border-radius: 50%">
-          <br>{{name}}
-        </a>
-
+        <div>
+          <a *ngIf="checkLogin" class="nav-link active" routerLink="changeAvatar">
+            <img [src]="avatar" alt="" width="60px" height="60px" style="margin-left: -1px ;border-radius: 50%">
+            <br>{{username}}
+          </a>
+        </div>
       <a *ngIf="!checkLogin" class="nav-link active" aria-current="page" routerLink="login">Login</a>
       <a *ngIf="!checkLogin" class="nav-link active" aria-current="page" routerLink="register">Register</a>
       <a *ngIf="checkLogin" class="nav-link active" aria-current="page" href="" (click)="logOut()">Logout</a>

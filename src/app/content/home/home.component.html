@@ -2,7 +2,24 @@
   <div class="row">
     <div class="col-12" style="margin-top: 20px">
       <mat-card style="margin: 50px 0">
-        <h1>hello {{name}}</h1>
+        <div class="row">
+          <div class="column" *ngFor="let sup of suppliers">
+              <div class="card">
+                <a [routerLink]="['/detail-supplier/',sup.id]">
+                  <img class="img" [src]="sup.user.avatar" alt=""><br><br>
+                  <i style="font-size: 1.5vw; color: crimson">{{sup.name}}</i><br>
+                </a>
+                <i>{{sup.description}}</i>
+                <b>Dịch vụ cung cấp:</b>
+                <p *ngFor="let ser of sup.services">
+                  <i>{{ser.name}}</i>
+                </p>
+              </div>
+          </div>
+        </div>
+        <mat-paginator [length]="totalElements" [pageSizeOptions]="[12,16,24]"
+                       aria-label="Select page" (page)="nextPage($event)">
+        </mat-paginator>
       </mat-card>
     </div>
   </div>

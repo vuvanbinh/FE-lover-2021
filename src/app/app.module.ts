@@ -17,6 +17,17 @@ import {MatButtonModule} from "@angular/material/button";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { HomeComponent } from './content/home/home.component';
 import {httpInterceptorProviders} from "./security/auth.interceptor";
+import { CreateComponent } from './content/supplier/create/create.component';
+import {MatSelectModule} from "@angular/material/select";
+import {MatOptionModule} from "@angular/material/core";
+import {AngularFireStorageModule} from "@angular/fire/storage";
+import {AngularFireModule} from "@angular/fire";
+import {environment} from "../environments/environment.prod";
+import { UploadAvatarComponent } from './upload/upload-avatar/upload-avatar.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import { CreateServiceComponent } from './content/services/create-service/create-service.component';
+import { DetailSupplierComponent } from './content/supplier/detail-supplier/detail-supplier.component';
 
 @NgModule({
   declarations: [
@@ -25,21 +36,31 @@ import {httpInterceptorProviders} from "./security/auth.interceptor";
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent
+    HomeComponent,
+    CreateComponent,
+    UploadAvatarComponent,
+    CreateServiceComponent,
+    DetailSupplierComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    FormsModule,
-    MatFormFieldModule,
-    HttpClientModule,
-    MatCardModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        FormsModule,
+        MatFormFieldModule,
+        HttpClientModule,
+        MatCardModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatButtonModule,
+        MatSelectModule,
+        MatOptionModule,
+        AngularFireStorageModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        MatProgressSpinnerModule,
+        MatPaginatorModule
+    ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })

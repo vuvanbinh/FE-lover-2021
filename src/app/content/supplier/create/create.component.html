@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 22px">
+      <mat-card style="margin: 50px">
+        <mat-card-title class="alert alert-primary">Nhập thông tin nhà cung</mat-card-title>
+        <mat-error class="alert alert-primary" *ngIf="status!='' ">{{status}}</mat-error>
+        <div>
+          <form class="example-form" #f="ngForm" (ngSubmit)="f.form.valid && ngSubmit()" novalidate>
+            <table>
+              <tr>
+                <td>
+                  <mat-form-field style="width: 300px" appearance="outline">
+                    <mat-label>Tên của bạn:</mat-label>
+                    <input matInput name="name" [(ngModel)]="supplier.name"
+                           required #name="ngModel">
+                    <mat-error *ngIf="name.hasError('required')">Ô nhập tên đang bị bỏ trống, vui lòng điền lại!
+                    </mat-error>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field style="width: 300px" appearance="outline">
+                    <mat-label>Nhập năm sinh:</mat-label>
+                    <input type="number" matInput name="yearOfBirth" [(ngModel)]="supplier.yearOfBirth"
+                           required #yearOfBirth="ngModel">
+                    <mat-error *ngIf="yearOfBirth.hasError('required')">Ô nhập năm sinh bị bỏ trống, vui lòng điền lại!
+                    </mat-error>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Giới tính</mat-label>
+                    <mat-select [(value)]="supplier.sex">
+                      <mat-option value="Nữ">Nữ</mat-option>
+                      <mat-option value="Nam">Nam</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field style="width: 300px" appearance="outline">
+                    <mat-label>Thành phố:</mat-label>
+                    <input matInput name="city" [(ngModel)]="supplier.city"
+                           required #city="ngModel" minlength="3" maxlength="20">
+                    <mat-error *ngIf="city.hasError('required')">Ô nhập thành phố đang bị bỏ trống, vui lòng điền lại!</mat-error>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field style="width: 300px" appearance="outline">
+                    <mat-label>Quốc gia:</mat-label>
+                    <input matInput name="country" [(ngModel)]="supplier.country"
+                           required #country="ngModel" minlength="3" maxlength="20">
+                    <mat-error *ngIf="country.hasError('required')">Ô nhập quốc gia đang bị bỏ trống, vui lòng điền lại!
+                    </mat-error>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field style="width: 300px" appearance="outline">
+                    <mat-label>Chiều cao:</mat-label>
+                    <input matInput name="height" [(ngModel)]="supplier.height">
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field style="width: 300px" appearance="outline">
+                    <mat-label>Cân nặng:</mat-label>
+                    <input matInput placeholder="Placeholder" name="weight" [(ngModel)]="supplier.weight">
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field style="width: 300px" appearance="outline">
+                    <mat-label>Sở thích:</mat-label>
+                    <input matInput name="interests" [(ngModel)]="supplier.interests">
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field style="width: 300px" appearance="outline">
+                    <mat-label>Link facebook:</mat-label>
+                    <input matInput name="linkFB" [(ngModel)]="supplier.linkFB">
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+
+            <table>
+              <tr>
+                <td>
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Mô tả về bản thân:</mat-label>
+                    <textarea matInput [(ngModel)]="supplier.description" name="description"></textarea>
+                  </mat-form-field>
+                </td>
+                <td></td>
+                <td>
+                  <mat-form-field style="width: 300px" appearance="outline">
+                    <mat-label>Yêu cầu với người thuê:</mat-label>
+                    <input  matInput name="requirements" [(ngModel)]="supplier.requirements">
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td *ngFor="let image of images">
+                  <img src="{{image}}}" alt="" style="width: 170px; height: auto">
+                </td>
+              </tr>
+            </table>
+            <br>
+            <p>
+              <app-upload-avatar (giveURLtoCreate)="upLoadAvatar($event)"></app-upload-avatar>
+            </p>
+            <p>
+              <button mat-stroked-button color="primary" class="mat-raised-button ">Đăng thông tin</button>
+            </p>
+
+          </form>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -15,13 +15,18 @@ export class UserService {
   constructor(private http: HttpClient,
               ) { }
 
+  getRole():any{
+    let roles = JSON.parse(<string>window.localStorage.getItem('USER')).roles;
+    console.log(roles[0].authority)
+    return roles[0].authority
+  }
+
   signUp(signUp: SignUpForm): Observable<any> {
     return this.http.post<any>(this.API_SIGNUP, signUp);
   }
   signIn(signIn: SignInForm): Observable<any> {
     return this.http.post<any>(this.API_SIGNIN, signIn);
   }
-
 
 
 }

@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 50px;text-align: center">
+      <mat-card style="margin: 50px 0">
+        <mat-card-title class="alert alert-primary">Thông tin chi tiết của {{supplier.name}}</mat-card-title>
+        <div>
+          <img [src]="changeImage" alt="" style="width: 500px;height: auto">
+        </div>
+        <br>
+        <div >
+          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)"><img [src]="im.img" alt="" style="width: 100px;height: auto"></a>
+<!--          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)">{{im.img}}</a>-->
+        </div>
+            <p>
+              <b>Tên : </b>
+              <i>{{supplier.name}}</i>
+            </p>
+        <p>
+              <b>Năm sinh : </b>
+              <i>{{supplier.yearOfBirth}}</i>
+            </p>
+        <p>
+          <b>Giới tính: </b>
+          <i>{{supplier.sex}}</i>
+        </p>
+        <p>
+          <b>Thành phố : </b>
+          <i>{{supplier.city}}</i>
+        </p>
+        <p>
+          <b>Quốc tịch :</b>
+          <i>{{supplier.country}}</i>
+        </p>
+        <p>
+          <b>Chiều cao : </b>
+          <i>{{supplier.height}}</i>
+        </p>
+        <p>
+          <b>Cân nặng : </b>
+          <i>{{supplier.weight}}</i>
+        </p>
+        <p>
+          <b>Sở thích : </b>
+          <i>{{supplier.interests}}</i>
+        </p>
+        <p>
+          <b>Mô tả về bản thân : </b>
+          <i>{{supplier.description}}</i>
+        </p>
+        <p>
+          <b>Yêu cầu với người thuê : </b>
+          <i>{{supplier.requirements}}</i>
+        </p>
+        <p>
+          <b>Link facebook : </b>
+          <i><a href="{{supplier.linkFB}}">{{supplier.linkFB}}</a></i>
+        </p>
+        <p>
+          <b>Ngày tham gia : </b>
+          <i>{{supplier.user.joinDate}}</i>
+        </p>
+        <p>
+          <b>Số lượt thuê : </b>
+          <i>{{supplier.count}}</i>
+        </p>
+
+
+
+
+
+      </mat-card>
+    </div>
+  </div>
+</div>
+

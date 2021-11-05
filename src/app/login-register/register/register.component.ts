@@ -23,6 +23,7 @@ export class RegisterComponent implements OnInit {
 
   message:any={message:"Username is existed!"}
   message1:any={message:"Email is existed!"}
+  message2:any={message:"Email is existed!"}
   ngSubmit() {
     this.sigUpForm.avatar='https://firebasestorage.googleapis.com/v0/b/vubinh-84277.appspot.com/o/download.png?alt=media&token=3dbee61a-2e0e-4e66-9316-f7ec88b90bef';
     this.sigUpForm.joinDate= new Date();

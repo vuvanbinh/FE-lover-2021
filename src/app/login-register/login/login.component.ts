@@ -26,13 +26,9 @@ export class LoginComponent implements OnInit {
       if (JSON.stringify(data)===JSON.stringify(this.message)){
         this.status='Sai tên đăng nhập hoặc mật khẩu mời nhập lại'
       }else {
-        window.localStorage.setItem('TOKEN_KEY',data.token);
-        window.localStorage.setItem('ID_KEY',data.id);
-        window.localStorage.setItem('NAME_KEY',data.name);
-        window.localStorage.setItem('EMAIL_KEY',data.email);
-        window.localStorage.setItem('AVATAR_KEY',data.avatar);
+        window.localStorage.setItem('USER',JSON.stringify(data))
         console.log(" Dang nhap thanh cong");
-        this.router.navigate(['home']).then(()=>{
+        this.router.navigate(['']).then(()=>{
           location.reload()
         })
       }
