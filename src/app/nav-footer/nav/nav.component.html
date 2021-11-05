@@ -10,7 +10,7 @@
           <a *ngIf="(role==='USER')" class="nav-link active" aria-current="page" routerLink="create-supplier">Trở thành người cung cấp</a>
         </li>
         <li class="nav-item">
-          <a *ngIf="checkLogin" class="nav-link active" aria-current="page" routerLink="create-services">Đăng ký dịch vụ cung cấp</a>
+          <a *ngIf="(role==='USER')" class="nav-link active" aria-current="page" routerLink="create-services">Đăng ký dịch vụ cung cấp</a>
         </li>
 
         <li class="nav-item">
@@ -48,3 +48,4 @@
     </div>
   </div>
 </nav>
+
