@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment.prod";
 import {Supplier} from "../../model/Supplier";
 import {Observable} from "rxjs";
+import {Search} from "../../model/Search";
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,14 @@ export class SupplierService {
     return this.http.get<any>(this.API_SUPPLIER)
   }
 
-  findAllByIsConfirm():Observable<any>{
+  findAllSupplierByIsConfirm():Observable<any>{
     return this.http.get<any>(this.API_SUPPLIER_FIND_ALL_BY_CONFIRM+'/'+false)
   }
 
+  pageFindAll(pageSize?:any):Observable<any>{
+    const params = pageSize;
+    return this.http.get<any>(this.API_SUPPLIER_FIND_ALL_BY_CONFIRM+'/'+true,{params});//{params} thuộc về hàm get của angular}
+  }
 
 
   findById(id: number):Observable<Supplier>{
@@ -31,14 +36,26 @@ export class SupplierService {
     return this.http.post<any>(this.API_SUPPLIER,supplier);
   }
 
-  pageFindAll(pageSize?:any):Observable<any>{
-    const params = pageSize;
-    return this.http.get<any>(this.API_SUPPLIER_FIND_ALL_BY_CONFIRM+'/'+true,{params});//{params} thuộc về hàm get của angular}
-  }
+
 
   changeIsConfirm(id:number):Observable<any>{
     return this.http.post<any>(this.API_SUPPLIER+'/changeIsConfirm/'+id,id);
   }
 
+  findByUser():Observable<any>{
+    return this.http.get<any>(this.API_SUPPLIER+'/findByUser')
+  }
+
+  changeIsActive(id: number):Observable<Supplier>{
+    return this.http.post<Supplier>(`${this.API_SUPPLIER}/changeIsActive/${id}`,id)
+  }
+
+  search(search:Search):Observable<any>{
+    return this.http.post<any>(this.API_SUPPLIER+'/search',search);
+  }
+
+  top6():Observable<any> {
+    return this.http.get<any>(this.API_SUPPLIER +'/top6');
+  }
 
 }

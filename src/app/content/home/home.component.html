@@ -1,26 +1,68 @@
 <div class="container">
   <div class="row">
-    <div class="col-12" style="margin-top: 20px">
-      <mat-card style="margin: 50px 0">
+    <!--    <div class="col-12" style="margin-top: 20px">-->
+    <mat-card style="margin: 50px 0">
+
+      <!--        Tìm kiếm -->
+      <div>
+        <input placeholder="Tên" style="border-radius: 50%;height: 50px; text-align: center" [(ngModel)]="search.name">
+        <select style="border-radius: 50%;width: 150px;height: 50px;text-align: center" [(ngModel)]="age">
+          <option>Tuổi</option>
+          <option value='1824'>18-24</option>
+          <option value='2529'>25-29</option>
+          <option value='3035'>30-35</option>
+        </select>
+        <select style="border-radius: 50%;width: 150px;height: 50px;text-align: center" [(ngModel)]="search.sex">
+          <option>Giới tính</option>
+          <option value="Nữ">Nữ</option>
+          <option value="Nam">Nam</option>
+        </select>
+
+        <select style="border-radius: 50%;width: 150px;height: 50px;text-align: center" [(ngModel)]="search.city">
+          <option>Địa chỉ</option>
+          <option value="Hà Nội">Hà Nội</option>
+          <option value="Đà Nẵng">Đà Nẵng</option>
+          <option value="Sài Gòn">Sài Gòn</option>
+        </select>
+        <button style="font-size: 30px" mat-stroked-button color="primary" (click)="searchSup()">Tìm kiếm</button>
+        <button style="border-radius: 50%;width: 150px;height: 60px;;background-color: #ff7f48"
+                mat-stroked-button color="primary" (click)="top6View()">Top 6 view
+        </button>
+      </div>
+      <br>
+
+      <br><br>
+
+      <!--        Hiển thị dạng lưới-->
+      <div>
+        <div>
+          <mat-card-title (click)="pageFindAll({page:0 ,size:12})"
+                          style="padding-left: 35px;font-size: 40px;color: indianred">
+            Supplier
+          </mat-card-title>
+        </div>
         <div class="row">
           <div class="column" *ngFor="let sup of suppliers">
-              <div class="card">
-                <a [routerLink]="['/detail-supplier/',sup.id]">
-                  <img class="img" [src]="sup.user.avatar" alt=""><br><br>
-                  <i style="font-size: 1.5vw; color: crimson">{{sup.name}}</i><br>
-                </a>
-                <i>{{sup.description}}</i>
-                <b>Dịch vụ cung cấp:</b>
-                <p *ngFor="let ser of sup.services">
-                  <i>{{ser.name}}</i>
-                </p>
-              </div>
+            <div class="card">
+              <a [routerLink]="['/detail-supplier/',sup.id]">
+                <img class="img" [src]="sup.user.avatar" alt=""><br><br>
+                <i style="font-size: 1.5vw; color: crimson">{{sup.name}}</i><br>
+              </a>
+              <i>{{sup.description}}</i>
+              <b>Dịch vụ cung cấp:</b>
+              <p *ngFor="let ser of sup.services">
+                <i>{{ser.name}}</i>
+              </p>
+              <p>View: <b style="font-size: 22px;color: #ff7f48"> {{sup.view}}</b></p>
+            </div>
           </div>
         </div>
         <mat-paginator [length]="totalElements" [pageSizeOptions]="[12,16,24]"
                        aria-label="Select page" (page)="nextPage($event)">
         </mat-paginator>
-      </mat-card>
-    </div>
+      </div>
+
+    </mat-card>
   </div>
 </div>
+<!--</div>-->

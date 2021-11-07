@@ -7,18 +7,18 @@
           <img [src]="changeImage" alt="" style="width: 500px;height: auto">
         </div>
         <br>
-        <div >
-          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)"><img [src]="im.img" alt="" style="width: 100px;height: auto"></a>
-<!--          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)">{{im.img}}</a>-->
+        <div>
+          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)"><img [src]="im.img" alt=""
+                                                                                      style="width: 100px;height: auto"></a>
         </div>
-            <p>
-              <b>Tên : </b>
-              <i>{{supplier.name}}</i>
-            </p>
         <p>
-              <b>Năm sinh : </b>
-              <i>{{supplier.yearOfBirth}}</i>
-            </p>
+          <b>Tên : </b>
+          <i>{{supplier.name}}</i>
+        </p>
+        <p>
+          <b>Năm sinh : </b>
+          <i>{{supplier.yearOfBirth}}</i>
+        </p>
         <p>
           <b>Giới tính: </b>
           <i>{{supplier.sex}}</i>
@@ -63,9 +63,6 @@
           <b>Số lượt thuê : </b>
           <i>{{supplier.count}}</i>
         </p>
-
-
-
 
 
       </mat-card>

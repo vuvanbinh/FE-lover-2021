@@ -27,10 +27,13 @@ export class LoginComponent implements OnInit {
         this.status='Sai tên đăng nhập hoặc mật khẩu mời nhập lại'
       }else {
         window.localStorage.setItem('USER',JSON.stringify(data))
-        console.log(" Dang nhap thanh cong");
-        this.router.navigate(['']).then(()=>{
-          location.reload()
-        })
+        if (this.userService.getRole()=='ADMIN'){
+          this.router.navigate(['/admin'])
+        }else {
+          this.router.navigate(['']).then(()=>{
+            location.reload()
+          })
+        }
       }
     })
   }

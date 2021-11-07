@@ -1,0 +1,76 @@
+<div>
+  <mat-card style="margin-top: 22px">
+    <mat-card-title class="alert alert-primary" style="text-align: center;font-size: 40px">Profile</mat-card-title>
+    <div class="container" style="margin-top: 22px">
+      <div class="row">
+
+        <div class="col" style="background-color: honeydew">
+          <div>
+            <img [src]="changeImage" alt="" style="width: 400px;height: 400px">
+          </div>
+          <br>
+          <div>
+            <p *ngIf="(supplier.active)">
+              <button style="font-size: 30px" mat-raised-button color="primary" (click)="changeIsActive()">Sẵn sàng</button>
+            </p>
+            <p *ngIf="(supplier.active==false) " style="font-size: 30px">
+              <button style="font-size: 30px" mat-raised-button color="warn" (click)="changeIsActive()">Tạm ngưng
+              </button>
+            </p>
+          </div>
+          <br>
+          <div>
+            <a style="margin-left: 8px" (click)="changeAvatar(im.img)"
+               *ngFor="let im of (supplier.images)"><img [src]="im.img" alt="" style="width: 70px;height: auto"></a>
+          </div>
+        </div>
+
+        <div class="col" style="background-color: honeydew">
+          <table>
+            <tr><p>Name: {{supplier.name}}</p></tr>
+            <tr><p>Năm sinh: {{supplier.yearOfBirth}}</p></tr>
+            <tr><p>Giới tính: {{supplier.sex}}</p></tr>
+            <tr><p>Thành phố: {{supplier.city}}</p></tr>
+            <tr><p>Quốc gia: {{supplier.country}}</p></tr>
+            <tr><p>Chiều cao: {{supplier.height}}</p></tr>
+            <tr><p>Cân nặng: {{supplier.weight}}</p></tr>
+            <tr><p>Sở thích: {{supplier.interests}}</p></tr>
+            <tr><p>Mô tả về bản thân: {{supplier.description}}</p></tr>
+            <tr><p>Yêu cầu: {{supplier.requirements}}</p></tr>
+            <tr><p>LinkFb: {{supplier.linkFB}}</p></tr>
+            <tr><p>Số lượt thuê: {{supplier.count}}</p></tr>
+          </table>
+        </div>
+
+        <div class="col-5" style="background-color: aliceblue">
+          <p><b>Các dịch vụ đang cung cấp: </b></p>
+          <mat-error>{{status}}</mat-error>
+          <table>
+            <th>Dịch vụ cơ bản :</th>
+            <tr *ngFor="let ser of supplier.services" >
+              <td *ngIf="ser.serviceType==='Dịch vụ cơ bản' ">{{ser.name}}</td>
+              <td *ngIf="ser.serviceType==='Dịch vụ cơ bản' && checkClickChangePriceBasic==false">{{ser.price}}k</td>
+              <td *ngIf="ser.serviceType==='Dịch vụ cơ bản' && checkClickChangePriceBasic==true"><input type="number"  [(ngModel)]="priceBasic"></td>
+              <td *ngIf="ser.serviceType==='Dịch vụ cơ bản' && checkClickChangePriceBasic==false"><input type="submit" value="Cập nhật giá" (click)="changeCheckClickChangePriceBasic(ser.price)"></td>
+              <td *ngIf="ser.serviceType==='Dịch vụ cơ bản' && checkClickChangePriceBasic==true"><input type="submit" value="Cập nhật" (click)="updatePrice(ser.id,ser.serviceType)"></td>
+            </tr>
+            <th>Dịch vụ miễn phí :</th>
+            <tr *ngFor="let ser of supplier.services">
+              <td *ngIf="ser.serviceType==='Dịch vụ miễn phí' ">{{ser.name}}</td>
+              <td *ngIf="ser.serviceType==='Dịch vụ miễn phí' ">{{ser.price}}k</td>
+            </tr>
+            <th>Dịch vụ mở rộng :</th>
+            <tr *ngFor="let ser of supplier.services">
+              <td *ngIf="ser.serviceType==='Dịch vụ mở rộng' ">{{ser.name}}</td>
+              <td *ngIf="ser.serviceType==='Dịch vụ mở rộng' && checkClickChangePriceExtend==false">{{ser.price}}k</td>
+              <td *ngIf="ser.serviceType==='Dịch vụ mở rộng' && checkClickChangePriceExtend==true"><input type="number"  [(ngModel)]="priceExtend"></td>
+              <td *ngIf="ser.serviceType==='Dịch vụ mở rộng' && checkClickChangePriceExtend==false"><input type="submit" value="Cập nhật giá" (click)="changeCheckClickChangePriceExtend(ser.price)"></td>
+              <td *ngIf="ser.serviceType==='Dịch vụ mở rộng' && checkClickChangePriceExtend==true"><input type="submit" value="Cập nhật" (click)="updatePrice(ser.id,ser.serviceType)"></td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </mat-card>
+</div>

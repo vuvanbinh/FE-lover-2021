@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Supplier} from "../../../model/Supplier";
 import {SupplierService} from "../../../service/supplier/supplier.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-create',
@@ -12,9 +13,14 @@ export class CreateComponent implements OnInit {
   status='';
   images:Array<String>=[]
 
-  constructor(private supplierService:SupplierService) { }
+  constructor(private supplierService:SupplierService,
+              private router:Router) { }
 
   ngOnInit(): void {
+    if (!window.localStorage.getItem('USER')){
+      alert("Bạn cần đăng nhập để trở thành người cung cấp dịch vụ.");
+      this.router.navigate(['']);
+    }
   }
 
   message={message:"Create success!"}
@@ -30,6 +36,10 @@ export class CreateComponent implements OnInit {
   upLoadAvatar($event: string) {
     this.images.push($event)
     console.log(this.images)
+  }
+
+  checkLogin(){
+
   }
 
 }

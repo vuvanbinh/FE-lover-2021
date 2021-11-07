@@ -15,5 +15,7 @@ export class ServicesService {
     return this.http.post<any>(this.API_SERVICES,services);
   }
 
-
+  changePriceById(id:number,price:number):Observable<any>{
+    return this.http.put<any>(`${this.API_SERVICES}/changePriceById/${id}?price=${price}`,id);
+  }
 }
