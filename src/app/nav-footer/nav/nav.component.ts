@@ -17,12 +17,13 @@ export class NavComponent implements OnInit {
                private userService:UserService) { }
 
   ngOnInit(): void {
-    if (JSON.parse(<string>window.localStorage.getItem('USER')).token){
+    if (window.localStorage.getItem('USER')){
       this.checkLogin = true;
       this.username = JSON.parse(<string>window.localStorage.getItem('USER')).username;
       this.avatar = JSON.parse(<string>window.localStorage.getItem('USER')).avatar;
+      this.role=this.userService.getRole();
     }
-    this.role=this.userService.getRole();
+
   }
 
 

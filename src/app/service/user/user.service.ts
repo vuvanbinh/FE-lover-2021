@@ -10,6 +10,7 @@ import {SignInForm} from "../../model/SignInForm";
   providedIn: 'root'
 })
 export class UserService {
+  private API_USERS = environment.API_LOCAL+'users';
   private API_SIGNIN = environment.API_LOCAL+'auth/signIn';
   private API_SIGNUP = environment.API_LOCAL+'auth/signUp';
   constructor(private http: HttpClient,
@@ -28,5 +29,8 @@ export class UserService {
     return this.http.post<any>(this.API_SIGNIN, signIn);
   }
 
+  finAllUser():Observable<any>{
+    return this.http.get<any>(this.API_USERS);
+  }
 
 }

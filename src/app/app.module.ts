@@ -30,6 +30,7 @@ import { CreateServiceComponent } from './content/services/create-service/create
 import { DetailSupplierComponent } from './content/supplier/detail-supplier/detail-supplier.component';
 import { AdminPageComponent } from './content/admin/admin-page/admin-page.component';
 import {MatTableModule} from "@angular/material/table";
+import { SupplierProfileComponent } from './content/supplier/supplier-profile/supplier-profile.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {MatTableModule} from "@angular/material/table";
     UploadAvatarComponent,
     CreateServiceComponent,
     DetailSupplierComponent,
-    AdminPageComponent
+    AdminPageComponent,
+    SupplierProfileComponent
   ],
   imports: [
     BrowserModule,
