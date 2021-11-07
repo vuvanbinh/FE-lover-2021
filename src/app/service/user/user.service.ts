@@ -33,4 +33,8 @@ export class UserService {
     return this.http.get<any>(this.API_USERS);
   }
 
+  blockAccount(id:number):Observable<any>{
+    return this.http.post<any>(this.API_USERS+'/block/'+id,id);
+  }
+
 }

@@ -43,7 +43,7 @@ export class AdminPageComponent implements OnInit {
     })
   }
 
-  message = {message: "Browser success!"}
+  message = {message: "Success!"}
   conFirm(id: number, name: string) {
     let conf = confirm('Xác nhận duyệt cho ' + name + ' trở thành người cung cấp dịch vụ?');
     if (conf) {
@@ -70,5 +70,12 @@ export class AdminPageComponent implements OnInit {
     })
   }
 
+  blockAccount(id:number) {
+      this.userService.blockAccount(id).subscribe(data => {
+        if (JSON.stringify(data) === JSON.stringify(this.message)) {
+          this.showAllUser();
+        }
+      })
+    }
 
 }
