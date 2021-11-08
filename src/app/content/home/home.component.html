@@ -1,34 +1,61 @@
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 d-lg-flex flex-lg-column justify-content-center align-items-stretch pt-5 pt-lg-0 order-2 order-lg-1" data-aos="fade-up">
+        <div>
+          <h1>Chúng tôi ba đời chữa bệnh FA</h1>
+          <h2>Hẳn các bạn phải tuyệt vọng lắm mới tìm đến tôi đúng không :))</h2>
+        </div>
+      </div>
+      <div class="col-lg-6 d-lg-flex flex-lg-column align-items-stretch order-1 order-lg-2 hero-img" data-aos="fade-up">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUgl02wrseQ2vyfcOMWO19BfJNfXRZxMDVzQ&usqp=CAU" alt="">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Hero -->
+
+
+
 <div class="container">
   <div class="row">
     <!--    <div class="col-12" style="margin-top: 20px">-->
     <mat-card style="margin: 50px 0">
 
       <!--        Tìm kiếm -->
-      <div>
-        <input placeholder="Tên" style="border-radius: 50%;height: 50px; text-align: center" [(ngModel)]="search.name">
-        <select style="border-radius: 50%;width: 150px;height: 50px;text-align: center" [(ngModel)]="age">
+        <div >
+        <input placeholder="Tên" style="border-radius: 50px;height: 50px; text-align: center" [(ngModel)]="search.name">
+
+
+        <select style="border-radius:50px;width: 150px;height: 50px;text-align: center" [(ngModel)]="age">
+
           <option>Tuổi</option>
           <option value='1824'>18-24</option>
           <option value='2529'>25-29</option>
           <option value='3035'>30-35</option>
         </select>
-        <select style="border-radius: 50%;width: 150px;height: 50px;text-align: center" [(ngModel)]="search.sex">
+
+        <select style="border-radius: 50px;width: 150px;height: 50px;text-align: center" [(ngModel)]="search.sex">
           <option>Giới tính</option>
           <option value="Nữ">Nữ</option>
           <option value="Nam">Nam</option>
         </select>
 
-        <select style="border-radius: 50%;width: 150px;height: 50px;text-align: center" [(ngModel)]="search.city">
+        <select style="border-radius:50px;width: 150px;height: 50px;text-align: center" [(ngModel)]="search.city">
           <option>Địa chỉ</option>
           <option value="Hà Nội">Hà Nội</option>
           <option value="Đà Nẵng">Đà Nẵng</option>
           <option value="Sài Gòn">Sài Gòn</option>
         </select>
-        <button style="font-size: 30px" mat-stroked-button color="primary" (click)="searchSup()">Tìm kiếm</button>
-        <button style="border-radius: 50%;width: 150px;height: 60px;;background-color: #ff7f48"
+
+
+        <button style="font-size: 30px;border-radius:50px " mat-stroked-button color="primary" (click)="searchSup()">Tìm kiếm</button>
+        <button style="border-radius: 50px;width: 150px;height: 60px;;background-color: #ff7f48"
                 mat-stroked-button color="primary" (click)="top6View()">Top 6 view
         </button>
-      </div>
+        </div>
+
       <br>
 
       <br><br>

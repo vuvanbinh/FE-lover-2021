@@ -1,75 +1,30 @@
-<header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="">Home</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a *ngIf="( role!=='ADMIN' && role!=='PM')" class="nav-link active" aria-current="page"
-               routerLink="create-supplier">Trở thành người cung cấp</a>
-          </li>
-          <li class="nav-item">
-            <a *ngIf="(role==='USER')||(role==='PM')" class="nav-link active" aria-current="page"
-               routerLink="create-services">Đăng ký dịch vụ cung cấp</a>
-          </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled">Disabled</a>
-          </li>
-        </ul>
+<header id="header" class="fixed-top  header-transparent " style="background: #e5e6e7">
+  <div class="container d-flex align-items-center justify-content-between">
 
-        <div>
-          <a *ngIf="checkLogin" class="nav-link active" routerLink="profile-supplier" aria-current="page">
-            <img [src]="avatar" alt="" width="60px" height="60px" style="margin-left: -1px ;border-radius: 50%">
-            <br>{{username}}
-          </a>
-        </div>
-        <a *ngIf="!checkLogin" class="nav-link active" aria-current="page" routerLink="login">Login</a>
-        <a *ngIf="!checkLogin" class="nav-link active" aria-current="page" routerLink="register">Register</a>
-        <a *ngIf="checkLogin" class="nav-link active" aria-current="page" href="" (click)="logOut()">Logout</a>
-      </div>
+    <div class="logo">
+      <h1><a href="index.html">HÒ HẸN</a></h1>
     </div>
-  </nav>
+    <nav id="nav" class="navbar">
+    <ul>
+      <li><a class="nav-link scrollto active" href="/">Home</a></li>
+      <li> <a *ngIf="( role!=='ADMIN' && role!=='PM')"  class="nav-link scrollto active" routerLink="create-supplier">Trở thành người cung cấp dịch vụ</a></li>
+      <li> <a *ngIf="(role==='USER')||(role==='PM')" class="nav-link scrollto" routerLink="create-services">Đăng ký dịch vụ cung cấp</a></li>
+    </ul>
+    </nav>
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li  *ngIf="!checkLogin"  ><a  class="getstarted scrollto" routerLink="login">Đăng nhập</a></li>
+        <li  *ngIf="!checkLogin" ><a class="getstarted scrollto" routerLink="register">Đăng ký</a></li>
+        <li   *ngIf="checkLogin"   class="dropdown"><a routerLink="profile-supplier" ><img [src]="avatar" alt="" width="45px" height="45px" style="margin-left: -1px;border-radius: 50%"></a>
+                <ul>
+                  <li><a class="nav-link active" aria-current="page" href="" (click)="logOut()">Logout</a></li>
+                </ul>
+              </li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+
+    <!-- .navbar -->
+  </div>
 </header>
-
-<!--<header id="header" class="fixed-top  header-transparent ">-->
-<!--  <div class="container d-flex align-items-center justify-content-between">-->
-
-<!--    <div class="logo">-->
-<!--      <h1><a href="index.html">HÒ HẸN</a></h1>-->
-
-<!--    </div>-->
-
-<!--    <nav id="navbar" class="navbar">-->
-<!--      <ul>-->
-<!--        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>-->
-<!--        <li><a class="nav-link scrollto" href="#features">App Features</a></li>-->
-<!--        <li><a class="nav-link scrollto" href="#gallery">Gallery</a></li>-->
-<!--        <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>-->
-<!--        <li><a class="nav-link scrollto" href="#faq">F.A.Q</a></li>-->
-
-<!--        <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>-->
-<!--          <ul>-->
-<!--            <li><a href="#">Drop Down 1</a></li>-->
-<!--            <li><a href="#">Drop Down 2</a></li>-->
-<!--            <li><a href="#">Drop Down 3</a></li>-->
-<!--            <li><a href="#">Drop Down 4</a></li>-->
-<!--          </ul>-->
-<!--        </li>-->
-<!--        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>-->
-<!--        <li><a class="getstarted scrollto" href="#features">Đăng nhập</a></li>-->
-<!--        <li><a class="getstarted scrollto" href="#features">Đăng ký</a></li>-->
-<!--      </ul>-->
-<!--      <i class="bi bi-list mobile-nav-toggle"></i>-->
-<!--    </nav>-->
-
-<!--    &lt;!&ndash; .navbar &ndash;&gt;-->
-<!--  </div>-->
-<!--</header>-->

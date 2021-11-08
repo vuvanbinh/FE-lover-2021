@@ -31,6 +31,7 @@ import { DetailSupplierComponent } from './content/supplier/detail-supplier/deta
 import { AdminPageComponent } from './content/admin/admin-page/admin-page.component';
 import {MatTableModule} from "@angular/material/table";
 import { SupplierProfileComponent } from './content/supplier/supplier-profile/supplier-profile.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { SupplierProfileComponent } from './content/supplier/supplier-profile/su
     AngularFireModule.initializeApp(environment.firebaseConfig),
     MatProgressSpinnerModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatMenuModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
