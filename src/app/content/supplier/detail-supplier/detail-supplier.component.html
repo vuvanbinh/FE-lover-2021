@@ -1,71 +1,139 @@
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-12" style="margin-top: 50px;text-align: center">-->
+<!--      <mat-card style="margin: 50px 0">-->
+<!--        <mat-card-title class="alert alert-primary">Thông tin chi tiết của {{supplier.name}}</mat-card-title>-->
+<!--        <div>-->
+<!--          <img [src]="changeImage" alt="" style="width: 500px;height: auto">-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <div>-->
+<!--          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)"><img [src]="im.img" alt=""-->
+<!--                                                                                      style="width: 100px;height: auto"></a>-->
+<!--        </div>-->
+<!--        <p>-->
+<!--          <b>Tên : </b>-->
+<!--          <i>{{supplier.name}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Năm sinh : </b>-->
+<!--          <i>{{supplier.yearOfBirth}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Giới tính: </b>-->
+<!--          <i>{{supplier.sex}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Thành phố : </b>-->
+<!--          <i>{{supplier.city}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Quốc tịch :</b>-->
+<!--          <i>{{supplier.country}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Chiều cao : </b>-->
+<!--          <i>{{supplier.height}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Cân nặng : </b>-->
+<!--          <i>{{supplier.weight}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Sở thích : </b>-->
+<!--          <i>{{supplier.interests}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Mô tả về bản thân : </b>-->
+<!--          <i>{{supplier.description}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Yêu cầu với người thuê : </b>-->
+<!--          <i>{{supplier.requirements}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Link facebook : </b>-->
+<!--          <i><a href="{{supplier.linkFB}}">{{supplier.linkFB}}</a></i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Ngày tham gia : </b>-->
+<!--          <i>{{supplier.user.joinDate}}</i>-->
+<!--        </p>-->
+<!--        <p>-->
+<!--          <b>Số lượt thuê : </b>-->
+<!--          <i>{{supplier.count}}</i>-->
+<!--        </p>-->
+
+
+<!--      </mat-card>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <div class="container">
   <div class="row">
     <div class="col-12" style="margin-top: 50px;text-align: center">
       <mat-card style="margin: 50px 0">
         <mat-card-title class="alert alert-primary">Thông tin chi tiết của {{supplier.name}}</mat-card-title>
+      </mat-card>
+      <div  class="nav" >
+    <img [src]="changeImage" alt="" style="width: 300px;height: 300px"><br>
+        <p>Ngày tham gia: {{supplier.joinDate}}</p>
+      </div>
+
+      <div  class="content" align="left">
+        <h1>{{supplier.name}}</h1>
+        <table>
+          <tr>
+            <th width="150px">Năm sinh</th>
+            <th width="150px">Giới tính</th>
+            <th width="150px">Thành phố</th>
+            <th width="150px">Quốc tịch</th>
+            <th width="150px">Chiều cao</th>
+            <th width="150px">Cân nặng</th>
+          </tr>
+          <tr class="testColor">
+            <th>{{supplier.yearOfBirth}}</th>
+            <th>{{supplier.sex}}</th>
+            <th>{{supplier.city}}</th>
+            <th>{{supplier.country}}</th>
+            <th>{{supplier.height}}</th>
+            <th>{{supplier.weight}}</th>
+          </tr>
+          <tr>
+
+            <th width="150px">Sở thích</th>
+            <th width="150px">Yêu cầu với người thuê</th>
+            <th width="150px">Số lượt thuê</th>
+          </tr>
+          <tr class="testColor">
+
+            <th>{{supplier.interests}}</th>
+            <th>{{supplier.requirements}}</th>
+            <th>{{supplier.count}}</th>
+          </tr>
+          <tr>
+            <th> Link FaceBook:<a href="{{supplier.linkFB}}"> {{supplier.linkFB}}</a> </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th><button style="border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white" routerLink="/order">Thuê</button></th>
+          </tr>
+        </table><hr>
         <div>
-          <img [src]="changeImage" alt="" style="width: 500px;height: auto">
+          <h1>Thông tin</h1>
         </div>
-        <br>
         <div>
           <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)"><img [src]="im.img" alt="" style="width: 100px;height: auto"></a>
         </div>
-        <p>
-          <b>Tên : </b>
-          <i>{{supplier.name}}</i>
-        </p>
-        <p>
-          <b>Năm sinh : </b>
-          <i>{{supplier.yearOfBirth}}</i>
-        </p>
-        <p>
-          <b>Giới tính: </b>
-          <i>{{supplier.sex}}</i>
-        </p>
-        <p>
-          <b>Thành phố : </b>
-          <i>{{supplier.city}}</i>
-        </p>
-        <p>
-          <b>Quốc tịch :</b>
-          <i>{{supplier.country}}</i>
-        </p>
-        <p>
-          <b>Chiều cao : </b>
-          <i>{{supplier.height}}</i>
-        </p>
-        <p>
-          <b>Cân nặng : </b>
-          <i>{{supplier.weight}}</i>
-        </p>
-        <p>
-          <b>Sở thích : </b>
-          <i>{{supplier.interests}}</i>
-        </p>
-        <p>
-          <b>Mô tả về bản thân : </b>
-          <i>{{supplier.description}}</i>
-        </p>
-        <p>
-          <b>Yêu cầu với người thuê : </b>
-          <i>{{supplier.requirements}}</i>
-        </p>
-        <p>
-          <b>Link facebook : </b>
-          <i><a href="{{supplier.linkFB}}">{{supplier.linkFB}}</a></i>
-        </p>
-        <p>
-          <b>Ngày tham gia : </b>
-          <i>{{supplier.user.joinDate}}</i>
-        </p>
-        <p>
-          <b>Số lượt thuê : </b>
-          <i>{{supplier.count}}</i>
-        </p>
+        <div>
+          <p>{{supplier.description}}</p>
+        </div>
+      </div>
 
 
-      </mat-card>
-    </div>
   </div>
 </div>
-
+</div>

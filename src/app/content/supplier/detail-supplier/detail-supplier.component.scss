@@ -4,3 +4,20 @@ mat-card-title{
 p{
   font-size: 17px;
 }
+
+.testColor{
+  color: lightcoral;
+}
+.nav
+{
+  width: 300px; /* kích thước chiều rộng của vùng thanh bên */
+  float: left; /* canh div từ trái sang */
+
+}
+
+.content
+{
+  width: 900px; /* kích thước chiều rộng của vùng nội dung */
+  float: left; /* canh div từ trái sang */
+  padding: 20px 20px;
+}
