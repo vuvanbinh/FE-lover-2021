@@ -28,6 +28,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import { CreateServiceComponent } from './content/services/create-service/create-service.component';
 import { DetailSupplierComponent } from './content/supplier/detail-supplier/detail-supplier.component';
+import { BannerComponent } from './content/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DetailSupplierComponent } from './content/supplier/detail-supplier/deta
     CreateComponent,
     UploadAvatarComponent,
     CreateServiceComponent,
-    DetailSupplierComponent
+    DetailSupplierComponent,
+    BannerComponent
   ],
     imports: [
         BrowserModule,

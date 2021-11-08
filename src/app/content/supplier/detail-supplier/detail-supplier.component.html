@@ -3,14 +3,19 @@
     <div class="col-12" style="margin-top: 50px;text-align: center">
       <mat-card style="margin: 50px 0">
         <mat-card-title class="alert alert-primary">Thông tin chi tiết của {{supplier.name}}</mat-card-title>
-        <div>
-          <img [src]="changeImage" alt="" style="width: 500px;height: auto">
-        </div>
-        <br>
-        <div >
-          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)"><img [src]="im.img" alt="" style="width: 100px;height: auto"></a>
-<!--          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)">{{im.img}}</a>-->
-        </div>
+       <table>
+         <tr>
+           <td>
+          <img [src]="changeImage" alt="" style="width: 300px;height: auto"><br>
+             <div >
+               <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)"><img [src]="im.img" alt="" style="width: 100px;height: auto"></a>
+               <!--          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)">{{im.img}}</a>-->
+             </div>
+           </td>
+
+        <td >
+
+
             <p>
               <b>Tên : </b>
               <i>{{supplier.name}}</i>
@@ -63,9 +68,10 @@
           <b>Số lượt thuê : </b>
           <i>{{supplier.count}}</i>
         </p>
+        </td>
+         </tr>
 
-
-
+</table>
 
 
       </mat-card>
