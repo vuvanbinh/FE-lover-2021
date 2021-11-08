@@ -24,36 +24,40 @@
     <mat-card style="margin: 50px 0">
 
       <!--        Tìm kiếm -->
-        <div >
-        <input placeholder="Tên" style="border-radius: 50px;height: 50px; text-align: center" [(ngModel)]="search.name">
-
-
-        <select style="border-radius:50px;width: 150px;height: 50px;text-align: center" [(ngModel)]="age">
+        <div align="center" >
+        <input placeholder="Tên" style="border-radius: 30px;height: 40px;width: 120px; text-align: center" [(ngModel)]="search.name" >
+         &nbsp;&nbsp;&nbsp;
+        <select style="border-radius:50px;height: 40px;width: 120px;text-align: center" [(ngModel)]="age">
 
           <option>Tuổi</option>
           <option value='1824'>18-24</option>
           <option value='2529'>25-29</option>
           <option value='3035'>30-35</option>
         </select>
+          &nbsp;&nbsp;&nbsp;
 
-        <select style="border-radius: 50px;width: 150px;height: 50px;text-align: center" [(ngModel)]="search.sex">
+        <select style="border-radius: 50px;height: 40px;width: 120px;text-align: center" [(ngModel)]="search.sex">
           <option>Giới tính</option>
           <option value="Nữ">Nữ</option>
           <option value="Nam">Nam</option>
         </select>
+          &nbsp;&nbsp;&nbsp;
 
-        <select style="border-radius:50px;width: 150px;height: 50px;text-align: center" [(ngModel)]="search.city">
+        <select style="border-radius:50px;height: 40px;width: 120px;text-align: center" [(ngModel)]="search.city">
           <option>Địa chỉ</option>
           <option value="Hà Nội">Hà Nội</option>
           <option value="Đà Nẵng">Đà Nẵng</option>
           <option value="Sài Gòn">Sài Gòn</option>
         </select>
+          &nbsp;&nbsp;&nbsp;
 
+          <button style="border-radius: 50px;height: 40px;width: 120px;background-color: #e26161;color: white"
+                  mat-stroked-button  (click)="top6View()">Top 6 view
+          </button>
+          &nbsp;&nbsp;&nbsp;
 
-        <button style="font-size: 30px;border-radius:50px " mat-stroked-button color="primary" (click)="searchSup()">Tìm kiếm</button>
-        <button style="border-radius: 50px;width: 150px;height: 60px;;background-color: #ff7f48"
-                mat-stroked-button color="primary" (click)="top6View()">Top 6 view
-        </button>
+          <button icon style="border-radius:50px;height: 40px;width: 120px; "  mat-stroked-button color="primary" (click)="searchSup()">Tìm kiếm</button>
+
         </div>
 
       <br>

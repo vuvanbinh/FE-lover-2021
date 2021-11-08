@@ -32,6 +32,7 @@ import { AdminPageComponent } from './content/admin/admin-page/admin-page.compon
 import {MatTableModule} from "@angular/material/table";
 import { SupplierProfileComponent } from './content/supplier/supplier-profile/supplier-profile.component';
 import {MatMenuModule} from "@angular/material/menu";
+import { OrderComponent } from './content/orders/order/order.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {MatMenuModule} from "@angular/material/menu";
     CreateServiceComponent,
     DetailSupplierComponent,
     AdminPageComponent,
-    SupplierProfileComponent
+    SupplierProfileComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
