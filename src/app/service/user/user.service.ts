@@ -37,20 +37,20 @@ export class UserService {
   blockAccount(id:number):Observable<any>{
     return this.http.post<any>(this.API_USERS+'/block/'+id,id);
   }
-  getFindAll(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.API_USERS+ `/allOrder`)
-  }
+    getFindAll(): Observable<Order[]> {
+      return this.http.get<Order[]>(this.API_USERS+ `/allOrder`)
+    }
 
-  getAllAccomplished(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.API_USERS+ `/accomplished`)
-  }
+    getAllAccomplished(): Observable<Order[]> {
+      return this.http.get<Order[]>(this.API_USERS+ `/accomplished`)
+    }
 
-  getAllWait(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.API_USERS+ `/wait`)
-  }
+    getAllWait(): Observable<Order[]> {
+      return this.http.get<Order[]>(this.API_USERS+ `/wait`)
+    }
 
-  getAllReceived(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.API_USERS+ `/received`)
-  }
+    getAllReceived(): Observable<Order[]> {
+      return this.http.get<Order[]>(this.API_USERS+ `/received`)
+    }
 
 }
