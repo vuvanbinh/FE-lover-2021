@@ -36,6 +36,11 @@ import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatMenuModule} from "@angular/material/menu";
 import { DialogComponent } from './dialog/dialog/dialog.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { SuccsesDiaglogComponent } from './dialog/succses-diaglog/succses-diaglog.component';
+import { OderDetailComponent } from './content/orders/oder-detail/oder-detail.component';
+import { FeddbackDialogComponent } from './dialog/feddback-dialog/feddback-dialog.component';
+import { GetMoneyDialogComponent } from './dialog/get-money-dialog/get-money-dialog.component';
+import { CustomerProfileComponent } from './content/user/customer-profile/customer-profile.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +58,11 @@ import {MatDialogModule} from "@angular/material/dialog";
     SupplierProfileComponent,
     OrderCreateComponent,
     DialogComponent,
+    SuccsesDiaglogComponent,
+    OderDetailComponent,
+    FeddbackDialogComponent,
+    GetMoneyDialogComponent,
+    CustomerProfileComponent,
   ],
   imports: [
     BrowserModule,

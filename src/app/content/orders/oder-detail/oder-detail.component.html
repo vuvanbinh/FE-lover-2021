@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 30px"><br><br>
+      <mat-card style="margin: 50px" >
+        <mat-card-title class="alert alert-primary">Thông tin chi tiết đơn hàng</mat-card-title>
+        <div>
+          <table>
+            <tr>
+              <td>Tên người thuê: </td>
+              <td>{{order.user.username}}</td>
+            </tr>
+            <tr>
+              <td>Địa điểm : </td>
+              <td>{{order.address}}</td>
+            </tr>
+            <tr>
+              <td>Thời gian: </td>
+              <td>{{order.totalTime}} giờ</td>
+            </tr>
+            <tr>
+              <td>Từ: </td>
+              <td>{{order.hourStart}}h</td>
+              <td>ngày {{order.dayStart}}</td>
+            </tr>
+            <tr>
+              <td>Số tiền thuê:</td>
+              <td>{{order.totalMoney}}k</td>
+            </tr>
+            <tr>
+              <td>Trạng thái đơn hàng: </td>
+              <td> {{order.statusOrder}}</td>
+            </tr>
+          </table>
+        </div>
+        <br>
+        <div *ngIf="order.statusOrder=='Đã hoàn thành' " class="example-form">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Phản hồi về người thuê:</mat-label>
+            <textarea matInput [(ngModel)]="feedback" name="description" >
+            </textarea>
+          </mat-form-field>
+          <button mat-raised-button color="primary" (click)="changeFeedback()">Phản hồi</button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

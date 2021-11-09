@@ -42,7 +42,6 @@ export class AdminPageComponent implements OnInit {
       this.displayedColumns = ['STT', 'Avatar', 'Tên', 'Ngày gia nhập', 'Kích hoạt']
     })
   }
-
   message = {message: "Success!"}
   conFirm(id: number, name: string) {
     let conf = confirm('Xác nhận duyệt cho ' + name + ' trở thành người cung cấp dịch vụ?');
@@ -77,5 +76,7 @@ export class AdminPageComponent implements OnInit {
         }
       })
     }
+
+
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-dialog',
@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DialogComponent implements OnInit {
 
   constructor() { }
+  @Input() message='';
 
   ngOnInit(): void {
   }

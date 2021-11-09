@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Supplier} from "../../../model/Supplier";
 import {SupplierService} from "../../../service/supplier/supplier.service";
 import {Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {SuccsesDiaglogComponent} from "../../../dialog/succses-diaglog/succses-diaglog.component";
 
 @Component({
   selector: 'app-create',
@@ -14,7 +16,8 @@ export class CreateComponent implements OnInit {
   images:Array<String>=[]
 
   constructor(private supplierService:SupplierService,
-              private router:Router) { }
+              private router:Router
+              ,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     if (!window.localStorage.getItem('USER')){
@@ -28,7 +31,8 @@ export class CreateComponent implements OnInit {
     this.supplier.images = this.images;
     this.supplierService.create(this.supplier).subscribe(data=>{
       if (JSON.stringify(data)===JSON.stringify(this.message)){
-        this.status='Đăng ký thông tin cá nhân thành công!';
+        this.dialog.open(SuccsesDiaglogComponent)
+        // this.status='Đăng ký thông tin cá nhân thành công!';
       }
     })
   }

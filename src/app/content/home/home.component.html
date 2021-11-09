@@ -80,8 +80,10 @@
                 <i style="font-size: 1.5vw; color: crimson">{{sup.name}}</i>  <br>
               </a>
 
-              <b>Mô tả: </b><button *ngIf="!checkLogin" style="margin-left: 150px ;border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white" (click)="openDialog()">Thuê ngay</button><br>
-              <b>Mô tả: </b><button *ngIf="checkLogin" style="margin-left: 150px ;border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white" [routerLink]="['/order-create/'+sup.id]">Thuê ngay</button><br>
+              <b *ngIf="(role==='USER')||(checkLogin==false)">
+                <b>Mô tả: </b><button *ngIf="!checkLogin" style="margin-left: 150px ;border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white" (click)="openDialog()">Thuê ngay</button><br>
+                <b>Mô tả: </b><button *ngIf="checkLogin" style="margin-left: 150px ;border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white" [routerLink]="['/order-create/'+sup.id]">Thuê ngay</button><br>
+              </b>
               <i>{{sup.description}}</i><br>
               <b>Dịch vụ cung cấp: </b>
               <p *ngFor="let ser of sup.services">

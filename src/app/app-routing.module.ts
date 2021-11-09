@@ -9,6 +9,8 @@ import {DetailSupplierComponent} from "./content/supplier/detail-supplier/detail
 import {AdminPageComponent} from "./content/admin/admin-page/admin-page.component";
 import {SupplierProfileComponent} from "./content/supplier/supplier-profile/supplier-profile.component";
 import {OrderCreateComponent} from "./content/orders/order-create/order-create.component";
+import {OderDetailComponent} from "./content/orders/oder-detail/oder-detail.component";
+import {CustomerProfileComponent} from "./content/user/customer-profile/customer-profile.component";
 
 const routes: Routes = [
   {path:'register', component:RegisterComponent},
@@ -19,7 +21,10 @@ const routes: Routes = [
   {path:'detail-supplier/:id',component:DetailSupplierComponent},
   {path:'admin',component:AdminPageComponent},
   {path:'profile-supplier',component:SupplierProfileComponent},
-  {path:'order-create/:id',component:OrderCreateComponent}
+  {path:'order-create/:id',component:OrderCreateComponent},
+  {path:'order-detail/:id',component:OderDetailComponent},
+  {path:'customer-profile', component:CustomerProfileComponent}
+
 
 
 

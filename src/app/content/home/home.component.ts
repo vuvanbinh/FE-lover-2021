@@ -5,6 +5,7 @@ import {Search} from "../../model/Search";
 import {DialogComponent} from "../../dialog/dialog/dialog.component";
 import {MatDialog} from "@angular/material/dialog";
 import {Router} from "@angular/router";
+import {UserService} from "../../service/user/user.service";
 
 @Component({
   selector: 'app-home',
@@ -17,14 +18,17 @@ export class HomeComponent implements OnInit {
   suppliers:any;
   totalElements?:number=0;
   age='Tuổi';
+  role:any;
 
   constructor(private supplierService:SupplierService,
               private dialog:MatDialog,
-              private router: Router) { }
+              private router: Router,
+              private userService:UserService) { }
 
   ngOnInit(): void {
     if (window.localStorage.getItem('USER')){
       this.checkLogin=true;
+      this.role = this.userService.getRole();
     }
     this.search.city='Địa chỉ'
     this.search.sex='Giới tính'

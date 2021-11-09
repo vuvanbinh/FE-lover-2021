@@ -1,8 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {SupplierService} from "../../../service/supplier/supplier.service";
 import {Supplier} from "../../../model/Supplier";
 import {Services} from "../../../model/Service";
 import {ServicesService} from "../../../service/services/services.service";
+import {OrderService} from "../../../service/order/order.service";
+import {MatDialog} from "@angular/material/dialog";
+import {GetMoneyDialogComponent} from "../../../dialog/get-money-dialog/get-money-dialog.component";
+import {MatPaginator} from "@angular/material/paginator";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-supplier-profile',
@@ -12,20 +17,26 @@ import {ServicesService} from "../../../service/services/services.service";
 export class SupplierProfileComponent implements OnInit {
 
   supplier: any = {};
+  supplierID:any;
   changeImage?: HTMLImageElement;
 
   constructor(private supplierService: SupplierService,
-              private servicesService: ServicesService) {
+              private servicesService: ServicesService,
+              private orderService:OrderService,
+              private dialog : MatDialog) {
   }
 
   ngOnInit(): void {
     this.getSupplier()
   }
 
+
   getSupplier() {
     this.supplierService.findByUser().subscribe(data => {
       this.supplier = data;
-      this.changeImage = this.supplier.user.avatar
+      this.changeImage = this.supplier.user.avatar;
+      this.supplierID = this.supplier.id;
+      this.findAllOrderBySupplier()
     })
   }
 
@@ -34,7 +45,6 @@ export class SupplierProfileComponent implements OnInit {
   }
 
   message = {message: "Change IsActive success!"}
-
   changeIsActive() {
     this.supplierService.changeIsActive(this.supplier.id).subscribe(data => {
       if (JSON.stringify(data) == JSON.stringify(this.message)) {
@@ -81,4 +91,32 @@ export class SupplierProfileComponent implements OnInit {
   }
 
 
+
+
+  @ViewChild(MatPaginator) paginator: any;
+  dataSource: any;
+  displayedColumns: string[] = ["STT","Người thuê","Địa điểm","Thời gian thuê"
+    ,"Thời gian bắt đầu","Tổng tiền","Trạng thái","Thao tác"];
+  findAllOrderBySupplier(){
+    this.orderService.findAllBySupplier(this.supplierID).subscribe(data=>{
+      if ( !(JSON.stringify(data)===JSON.stringify({message:"Is empty!"})) ){
+        this.dataSource=data;
+        this.dataSource = new MatTableDataSource<any>(this.dataSource);
+        this.dataSource.paginator = this.paginator;
+      }
+    })
+  }
+
+  changeStatusOrder(id:number) {
+    console.log('--------id-----',id)
+    this.orderService.changeOrderStatus(id).subscribe(data => {
+      if (JSON.stringify(data)===JSON.stringify({message:"Update success!"})){
+      this.getSupplier();
+      }
+    })
+  }
+
+  getMoney() {
+    this.dialog.open(GetMoneyDialogComponent);
+  }
 }

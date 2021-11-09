@@ -10,13 +10,28 @@
         <li><a class="nav-link scrollto active" routerLink="">Home</a></li>
         <li> <a *ngIf="( role==='USER')"  class="nav-link scrollto active" routerLink="create-supplier">Trở thành người cung cấp dịch vụ</a></li>
         <li> <a *ngIf="(role==='PM' || role==='USER')" class="nav-link scrollto" routerLink="create-services">Đăng ký dịch vụ cung cấp</a></li>
+
       </ul>
     </nav>
     <nav id="navbar" class="navbar">
       <ul>
         <li  *ngIf="!checkLogin"  ><a  class="getstarted scrollto" routerLink="login">Đăng nhập</a></li>
         <li  *ngIf="!checkLogin" ><a class="getstarted scrollto" routerLink="register">Đăng ký</a></li>
-        <li   *ngIf="checkLogin"   class="dropdown"><a routerLink="profile-supplier" ><img [src]="avatar" alt="" width="45px" height="45px" style="margin-left: -1px;border-radius: 50%"> &nbsp;&nbsp;&nbsp;<p style="margin-top: 10px">Hello: {{username}}</p></a>
+        <li   *ngIf="checkLogin"   class="dropdown">
+          <a *ngIf="role=='PM' " routerLink="profile-supplier" >
+          <img [src]="avatar" alt="" width="45px" height="45px" style="margin-left: -1px;border-radius: 50%"> &nbsp;&nbsp;&nbsp;<p style="margin-top: 10px">
+          Hello: {{username}}</p>
+          </a>
+          <a *ngIf="role=='USER' " routerLink="customer-profile" >
+          <img [src]="avatar" alt="" width="45px" height="45px" style="margin-left: -1px;border-radius: 50%"> &nbsp;&nbsp;&nbsp;<p style="margin-top: 10px">
+          Hello: {{username}}</p>
+          </a>
+          <a *ngIf="role=='ADMIN' " >
+          <img [src]="avatar" alt="" width="45px" height="45px" style="margin-left: -1px;border-radius: 50%"> &nbsp;&nbsp;&nbsp;<p style="margin-top: 10px">
+          Hello: {{username}}</p>
+          </a>
+
+
           <ul>
             <li><a class="nav-link active" aria-current="page" href="" (click)="logOut()">Logout</a></li>
           </ul>
