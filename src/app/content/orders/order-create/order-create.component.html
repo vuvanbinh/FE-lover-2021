@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 30px;text-align: center">
+      <mat-card style="margin: 50px">
+        <mat-card-title class="alert alert-primary">Thuê người</mat-card-title>
+        <br>
+        <mat-error style="font-size: 26px">{{status}}</mat-error>
+        <br>
+<!--        Address-->
+        <mat-form-field  appearance="outline">
+          <mat-label>Địa điểm:</mat-label>
+          <input matInput name="address" [(ngModel)]="order.address"
+                 required #address="ngModel">
+          <mat-error *ngIf="address.hasError('required')">Không được bỏ trống, vui lòng điền lại!</mat-error>
+        </mat-form-field>
+        <br>
+
+<!--          Dịch vụ-->
+        <mat-form-field appearance="outline">
+          <mat-label>Chọn dịch vụ</mat-label>
+          <mat-select [formControl]="toppings" multiple [(ngModel)]="order.services">
+            <mat-option *ngFor="let ser of supplier.services" [value]="ser">{{ser.name}}: {{ser.price}}k</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+<!--        totalTime-->
+        <br>
+        <mat-form-field appearance="outline">
+          <mat-label>Nhập thời gian thuê :</mat-label>
+          <input (change)="calculate()" type="number" matInput name="totalTime" [(ngModel)]="order.totalTime"
+                 required #totalTime="ngModel">
+          <mat-error *ngIf="totalTime.hasError('required')">Thời gian đang bỏ trống, vui lòng điền lại!</mat-error>
+        </mat-form-field>
+        <br>
+
+        <p>Thành tiền {{order.totalMoney}} k</p>
+
+<!--        hourStart-->
+        <mat-form-field appearance="outline">
+          <mat-label>Từ :</mat-label>
+          <mat-select [(ngModel)]="order.hourStart">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let time of times" [value]="time">{{time}}h</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+
+<!--        dayStart-->
+        Ngày: <input type="date" [(ngModel)]="order.dayStart" style="width: 45%;height: 50px">
+        <br>
+        <br>
+
+        <p>
+          <button mat-stroked-button color="primary" class="mat-raised-button " (click)="createOrder()">Thuê dịch vụ</button>
+        </p>
+
+      </mat-card>
+    </div>
+  </div>
+</div>

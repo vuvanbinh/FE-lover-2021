@@ -11,7 +11,7 @@ import {Search} from "../../model/Search";
 export class SupplierService {
 
   private API_SUPPLIER = environment.API_LOCAL+'suppliers'
-  private API_SUPPLIER_FIND_ALL_BY_CONFIRM = environment.API_LOCAL+'suppliers/pageFindAllByIsConfirm'
+  private API_SUPPLIER_FIND_ALL_BY_CONFIRM = environment.API_LOCAL+'suppliers/pageFindAllByIsConfirmAndActive'
   constructor(private http:HttpClient) { }
 
   findAll():Observable<any>{
@@ -19,12 +19,12 @@ export class SupplierService {
   }
 
   findAllSupplierByIsConfirm():Observable<any>{
-    return this.http.get<any>(this.API_SUPPLIER_FIND_ALL_BY_CONFIRM+'/'+false)
+    return this.http.get<any>(this.API_SUPPLIER_FIND_ALL_BY_CONFIRM+'/'+false+'/'+false)
   }
 
   pageFindAll(pageSize?:any):Observable<any>{
     const params = pageSize;
-    return this.http.get<any>(this.API_SUPPLIER_FIND_ALL_BY_CONFIRM+'/'+true,{params});//{params} thuộc về hàm get của angular}
+    return this.http.get<any>(this.API_SUPPLIER_FIND_ALL_BY_CONFIRM+'/'+true+'/'+true,{params});//{params} thuộc về hàm get của angular}
   }
 
 

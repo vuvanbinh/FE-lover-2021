@@ -31,6 +31,8 @@ import { DetailSupplierComponent } from './content/supplier/detail-supplier/deta
 import { AdminPageComponent } from './content/admin/admin-page/admin-page.component';
 import {MatTableModule} from "@angular/material/table";
 import { SupplierProfileComponent } from './content/supplier/supplier-profile/supplier-profile.component';
+import { OrderCreateComponent } from './content/orders/order-create/order-create.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { SupplierProfileComponent } from './content/supplier/supplier-profile/su
     CreateServiceComponent,
     DetailSupplierComponent,
     AdminPageComponent,
-    SupplierProfileComponent
+    SupplierProfileComponent,
+    OrderCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,7 +68,8 @@ import { SupplierProfileComponent } from './content/supplier/supplier-profile/su
     AngularFireModule.initializeApp(environment.firebaseConfig),
     MatProgressSpinnerModule,
     MatPaginatorModule,
-    MatTableModule
+    MatTableModule,
+    MatDatepickerModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

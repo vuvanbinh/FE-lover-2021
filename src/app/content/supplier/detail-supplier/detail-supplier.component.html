@@ -4,13 +4,18 @@
       <mat-card style="margin: 50px 0">
         <mat-card-title class="alert alert-primary">Thông tin chi tiết của {{supplier.name}}</mat-card-title>
         <div>
-          <img [src]="changeImage" alt="" style="width: 500px;height: auto">
+          <img [src]="changeImage" alt="" style="width: 500px;height: 400px">
         </div>
         <br>
         <div>
-          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)"><img [src]="im.img" alt=""
-                                                                                      style="width: 100px;height: auto"></a>
+          <a (click)="changeAvatar(supplier.user.avatar)">
+            <img [src]="supplier.user.avatar" alt="" style="width: 65px;height: auto">
+          </a>
+          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)">
+            <img [src]="im.img" alt="" style="width: 65px;height: auto">
+          </a>
         </div>
+
         <p>
           <b>Tên : </b>
           <i>{{supplier.name}}</i>
@@ -63,6 +68,8 @@
           <b>Số lượt thuê : </b>
           <i>{{supplier.count}}</i>
         </p>
+
+        <button [routerLink]="['/order-create/',supplier.id]"  style="height: 45px">Thuê ngay</button>
 
 
       </mat-card>
