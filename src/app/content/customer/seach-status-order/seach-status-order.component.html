@@ -1,0 +1,26 @@
+<div>
+<div>
+  <mat-form-field appearance="outline">
+    <mat-label><strong>HIển thị danh sach theo</strong></mat-label>
+    <mat-select  style="width: 100%">
+      <mat-option value="all" (click)="getAll()" (click)="isShowForm=false">Tất cả trạng thái đơn </mat-option>
+      <mat-option value="browser" (click)="getWait()" (click)="isShowForm=false">Chờ phản hồi</mat-option>
+      <mat-option value="browser" (click)="getAllAccomplished ()" (click)="isShowForm=false" >Đã hoàn thành</mat-option>
+      <mat-option value="browser" (click)="getAllReceived()" (click)="isShowForm=true">Đã nhận</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<hr>
+<div>
+  <div class="col-12 col-md-6 col-lg-4" *ngFor="let sta of status">
+    <div>Tên: {{sta.supplier?.name}}</div>
+    <div > Trạng thái: {{sta.statusOrder}}  <button *ngIf="isShowForm" >Hoàn thành</button></div>
+    <div>Thời gian thuê: {{sta.totalTime}}</div>
+    <div>Ngày:  {{sta.dayStart}}</div>
+    <div>Tổng tiền: {{sta.totalMoney}} </div>
+      <div>Hành động: {{sta.feedback}}</div>
+    <hr>
+    </div>
+  </div>
+  </div>

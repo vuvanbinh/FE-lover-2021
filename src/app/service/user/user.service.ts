@@ -4,6 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {SignUpForm} from "../../model/SignUpForm";
 import {Observable} from "rxjs";
 import {SignInForm} from "../../model/SignInForm";
+import {Order} from "../../model/Order";
 
 
 @Injectable({
@@ -35,6 +36,21 @@ export class UserService {
 
   blockAccount(id:number):Observable<any>{
     return this.http.post<any>(this.API_USERS+'/block/'+id,id);
+  }
+  getFindAll(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.API_USERS+ `/allOrder`)
+  }
+
+  getAllAccomplished(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.API_USERS+ `/accomplished`)
+  }
+
+  getAllWait(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.API_USERS+ `/wait`)
+  }
+
+  getAllReceived(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.API_USERS+ `/received`)
   }
 
 }
