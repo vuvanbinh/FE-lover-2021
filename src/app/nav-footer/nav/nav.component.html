@@ -6,21 +6,21 @@
       <h1><a href="index.html">HÒ HẸN</a></h1>
     </div>
     <nav id="nav" class="navbar">
-    <ul>
-      <li><a class="nav-link scrollto active" href="/">Home</a></li>
-      <li> <a *ngIf="( role!=='ADMIN' && role!=='PM')"  class="nav-link scrollto active" routerLink="create-supplier">Trở thành người cung cấp dịch vụ</a></li>
-      <li> <a *ngIf="(role==='USER')||(role==='PM')" class="nav-link scrollto" routerLink="create-services">Đăng ký dịch vụ cung cấp</a></li>
-    </ul>
+      <ul>
+        <li><a class="nav-link scrollto active" href="/">Home</a></li>
+        <li> <a *ngIf="( role==='USER')"  class="nav-link scrollto active" routerLink="create-supplier">Trở thành người cung cấp dịch vụ</a></li>
+        <li> <a *ngIf="(role==='PM' || role==='USER')" class="nav-link scrollto" routerLink="create-services">Đăng ký dịch vụ cung cấp</a></li>
+      </ul>
     </nav>
     <nav id="navbar" class="navbar">
       <ul>
         <li  *ngIf="!checkLogin"  ><a  class="getstarted scrollto" routerLink="login">Đăng nhập</a></li>
         <li  *ngIf="!checkLogin" ><a class="getstarted scrollto" routerLink="register">Đăng ký</a></li>
         <li   *ngIf="checkLogin"   class="dropdown"><a routerLink="profile-supplier" ><img [src]="avatar" alt="" width="45px" height="45px" style="margin-left: -1px;border-radius: 50%"></a>
-                <ul>
-                  <li><a class="nav-link active" aria-current="page" href="" (click)="logOut()">Logout</a></li>
-                </ul>
-              </li>
+          <ul>
+            <li><a class="nav-link active" aria-current="page" href="" (click)="logOut()">Logout</a></li>
+          </ul>
+        </li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav>

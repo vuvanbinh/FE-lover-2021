@@ -31,8 +31,9 @@ import { DetailSupplierComponent } from './content/supplier/detail-supplier/deta
 import { AdminPageComponent } from './content/admin/admin-page/admin-page.component';
 import {MatTableModule} from "@angular/material/table";
 import { SupplierProfileComponent } from './content/supplier/supplier-profile/supplier-profile.component';
+import { OrderCreateComponent } from './content/orders/order-create/order-create.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatMenuModule} from "@angular/material/menu";
-import { OrderComponent } from './content/orders/order/order.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { OrderComponent } from './content/orders/order/order.component';
     DetailSupplierComponent,
     AdminPageComponent,
     SupplierProfileComponent,
-    OrderComponent
+    OrderCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +70,9 @@ import { OrderComponent } from './content/orders/order/order.component';
     MatProgressSpinnerModule,
     MatPaginatorModule,
     MatTableModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTableModule,
+    MatDatepickerModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

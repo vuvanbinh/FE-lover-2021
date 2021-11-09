@@ -20,6 +20,7 @@
           </div>
           <br>
           <div>
+            <a style="margin-left: 8px" (click)="changeAvatar(supplier.user.avatar)"><img [src]="supplier.user.avatar" alt="" style="width: 70px;height: auto"></a>
             <a style="margin-left: 8px" (click)="changeAvatar(im.img)"
                *ngFor="let im of (supplier.images)"><img [src]="im.img" alt="" style="width: 70px;height: auto"></a>
           </div>

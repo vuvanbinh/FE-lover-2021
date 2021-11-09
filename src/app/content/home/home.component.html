@@ -24,9 +24,9 @@
     <mat-card style="margin: 50px 0">
 
       <!--        Tìm kiếm -->
-        <div align="center" >
+      <div align="center" >
         <input placeholder="Tên" style="border-radius: 30px;height: 40px;width: 120px; text-align: center" [(ngModel)]="search.name" >
-         &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
         <select style="border-radius:50px;height: 40px;width: 120px;text-align: center" [(ngModel)]="age">
 
           <option>Tuổi</option>
@@ -34,14 +34,14 @@
           <option value='2529'>25-29</option>
           <option value='3035'>30-35</option>
         </select>
-          &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
 
         <select style="border-radius: 50px;height: 40px;width: 120px;text-align: center" [(ngModel)]="search.sex">
           <option>Giới tính</option>
           <option value="Nữ">Nữ</option>
           <option value="Nam">Nam</option>
         </select>
-          &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
 
         <select style="border-radius:50px;height: 40px;width: 120px;text-align: center" [(ngModel)]="search.city">
           <option>Địa chỉ</option>
@@ -49,16 +49,16 @@
           <option value="Đà Nẵng">Đà Nẵng</option>
           <option value="Sài Gòn">Sài Gòn</option>
         </select>
-          &nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
 
-          <button style="border-radius: 50px;height: 40px;width: 120px;background-color: #e26161;color: white"
-                  mat-stroked-button  (click)="top6View()">Top 6 view
-          </button>
-          &nbsp;&nbsp;&nbsp;
+        <button style="border-radius: 50px;height: 40px;width: 120px;background-color: #e26161;color: white"
+                mat-stroked-button  (click)="top6View()">Top 6 view
+        </button>
+        &nbsp;&nbsp;&nbsp;
 
-          <button icon style="border-radius:50px;height: 40px;width: 120px; "  mat-stroked-button color="primary" (click)="searchSup()">Tìm kiếm</button>
+        <button icon style="border-radius:50px;height: 40px;width: 120px; "  mat-stroked-button color="primary" (click)="searchSup()">Tìm kiếm</button>
 
-        </div>
+      </div>
 
       <br>
 
@@ -80,7 +80,7 @@
                 <i style="font-size: 1.5vw; color: crimson">{{sup.name}}</i>  <br>
               </a>
 
-              <b>Mô tả: </b><button style="margin-left: 150px ;border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white" routerLink="/order">Thuê</button><br>
+              <b>Mô tả: </b><button style="margin-left: 150px ;border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white" [routerLink]="['/order-create/',sup.id]">Thuê ngay</button><br>
               <i>{{sup.description}}</i><br>
               <b>Dịch vụ cung cấp: </b>
               <p *ngFor="let ser of sup.services">

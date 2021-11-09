@@ -25,7 +25,7 @@ export class AdminPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let token = window.localStorage.getItem('USER');
+    let token = window.localStorage.getItem('USER');  ``
     if (token == null) {
       this.router.navigate([''])
     }

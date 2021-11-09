@@ -8,7 +8,7 @@ import {CreateServiceComponent} from "./content/services/create-service/create-s
 import {DetailSupplierComponent} from "./content/supplier/detail-supplier/detail-supplier.component";
 import {AdminPageComponent} from "./content/admin/admin-page/admin-page.component";
 import {SupplierProfileComponent} from "./content/supplier/supplier-profile/supplier-profile.component";
-import {OrderComponent} from "./content/orders/order/order.component";
+import {OrderCreateComponent} from "./content/orders/order-create/order-create.component";
 
 const routes: Routes = [
   {path:'register', component:RegisterComponent},
@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'detail-supplier/:id',component:DetailSupplierComponent},
   {path:'admin',component:AdminPageComponent},
   {path:'profile-supplier',component:SupplierProfileComponent},
-  {path:'order',component:OrderComponent}
+  {path:'order-create/:id',component:OrderCreateComponent}
 
 
 
