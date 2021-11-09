@@ -4,6 +4,8 @@ import {SupplierService} from "../../../service/supplier/supplier.service";
 import {Order} from "../../../model/Order";
 import {FormControl} from "@angular/forms";
 import {OrderService} from "../../../service/order/order.service";
+import {MatDialog} from "@angular/material/dialog";
+import {DialogComponent} from "../../../dialog/dialog/dialog.component";
 
 @Component({
   selector: 'app-order-create',
@@ -20,7 +22,9 @@ export class OrderCreateComponent implements OnInit {
 
   constructor(private supplierService: SupplierService,
               private activatedRoute: ActivatedRoute,
-              private oderService:OrderService) {
+              private oderService:OrderService,
+              private dialog: MatDialog,
+              ) {
   }
 
   ngOnInit(): void {

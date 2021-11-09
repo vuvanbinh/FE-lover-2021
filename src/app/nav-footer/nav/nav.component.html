@@ -3,11 +3,11 @@
   <div class="container d-flex align-items-center justify-content-between">
 
     <div class="logo">
-      <h1><a href="index.html">HÒ HẸN</a></h1>
+      <h1><a routerLink="">HÒ HẸN</a></h1>
     </div>
     <nav id="nav" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto active" href="/">Home</a></li>
+        <li><a class="nav-link scrollto active" routerLink="">Home</a></li>
         <li> <a *ngIf="( role==='USER')"  class="nav-link scrollto active" routerLink="create-supplier">Trở thành người cung cấp dịch vụ</a></li>
         <li> <a *ngIf="(role==='PM' || role==='USER')" class="nav-link scrollto" routerLink="create-services">Đăng ký dịch vụ cung cấp</a></li>
       </ul>

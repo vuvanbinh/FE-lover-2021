@@ -34,6 +34,8 @@ import { SupplierProfileComponent } from './content/supplier/supplier-profile/su
 import { OrderCreateComponent } from './content/orders/order-create/order-create.component';
 import {MatDatepickerModule} from "@angular/material/datepicker";
 import {MatMenuModule} from "@angular/material/menu";
+import { DialogComponent } from './dialog/dialog/dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -50,6 +52,7 @@ import {MatMenuModule} from "@angular/material/menu";
     AdminPageComponent,
     SupplierProfileComponent,
     OrderCreateComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import {MatMenuModule} from "@angular/material/menu";
     MatTableModule,
     MatMenuModule,
     MatTableModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatDialogModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
