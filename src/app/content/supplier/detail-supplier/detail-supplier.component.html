@@ -4,12 +4,32 @@
       <mat-card style="margin: 50px 0">
         <mat-card-title class="alert alert-primary">Thông tin chi tiết của {{supplier.name}}</mat-card-title>
       </mat-card>
-      <div  class="nav" >
-    <img [src]="changeImage" alt="" style="width: 300px;height: 300px"><br>
-        <p>Ngày tham gia: {{supplier.joinDate}}</p>
+      <div class="nav">
+        <img [src]="changeImage" alt="" style="width: 300px;height: 300px"><br>
+        <div>
+        </div>
+        <p style="font-size: 20px">Ngày tham gia: {{supplier.user.joinDate}}</p>
+        <p><b>Các dịch vụ đang cung cấp: </b></p>
+        <table>
+          <th>Dịch vụ cơ bản :</th>
+          <tr *ngFor="let ser of supplier.services">
+            <td *ngIf="ser.serviceType==='Dịch vụ cơ bản' ">{{ser.name}}</td>
+            <td *ngIf="ser.serviceType==='Dịch vụ cơ bản' ">{{ser.price}}</td>
+          </tr>
+          <th>Dịch vụ miễn phí :</th>
+          <tr *ngFor="let ser of supplier.services">
+            <td *ngIf="ser.serviceType==='Dịch vụ miễn phí' ">{{ser.name}}</td>
+            <td *ngIf="ser.serviceType==='Dịch vụ miễn phí' ">{{ser.price}}k</td>
+          </tr>
+          <th>Dịch vụ mở rộng :</th>
+          <tr *ngFor="let ser of supplier.services">
+            <td *ngIf="ser.serviceType==='Dịch vụ mở rộng' ">{{ser.name}}</td>
+            <td *ngIf="ser.serviceType==='Dịch vụ mở rộng' ">{{ser.price}}</td>
+          </tr>
+        </table>
       </div>
 
-      <div  class="content" align="left">
+      <div class="content" align="left">
         <h1>{{supplier.name}}</h1>
         <table>
           <tr>
@@ -41,23 +61,29 @@
             <th>{{supplier.count}}</th>
           </tr>
           <tr>
-            <th> Link FaceBook:<a href="{{supplier.linkFB}}"> {{supplier.linkFB}}</a> </th>
+            <th> Link FaceBook:<a href="{{supplier.linkFB}}"> {{supplier.linkFB}}</a></th>
             <th></th>
             <th></th>
             <th></th>
             <th></th>
-            <th><button  style="border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white" data-toggle="modal" data-target="#exampleModalCenter" [routerLink]="['/order-create/',supplier.id]">Thuê</button></th>
+            <th>
+              <button style="border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white"
+                      [routerLink]="['/order-create/',supplier.id]">Thuê ngay
+              </button>
+            </th>
           </tr>
-        </table><hr>
-          <h1>Thông tin</h1>
+        </table>
+        <hr>
+        <h1>Thông tin</h1>
         <a (click)="changeAvatar(supplier.user.avatar)">
           <img [src]="supplier.user.avatar" alt="" style="width: 65px;height: auto">
         </a>
-          <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)"><img [src]="im.img" alt="" style="width: 100px;height: auto"></a>
+        <a (click)="changeAvatar(im.img)" *ngFor="let im of (supplier.images)"><img [src]="im.img" alt=""
+                                                                                    style="width: 100px;height: auto"></a>
         <div>
           <p>{{supplier.description}}</p>
         </div>
       </div>
+    </div>
   </div>
-</div>
 </div>

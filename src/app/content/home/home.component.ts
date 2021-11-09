@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {SupplierService} from "../../service/supplier/supplier.service";
 import {PageEvent} from "@angular/material/paginator";
 import {Search} from "../../model/Search";
+import {DialogComponent} from "../../dialog/dialog/dialog.component";
+import {MatDialog} from "@angular/material/dialog";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -9,14 +12,20 @@ import {Search} from "../../model/Search";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  checkLogin: boolean=false;
   search:Search={}
   suppliers:any;
   totalElements?:number=0;
   age='Tuổi';
 
-  constructor(private supplierService:SupplierService) { }
+  constructor(private supplierService:SupplierService,
+              private dialog:MatDialog,
+              private router: Router) { }
 
   ngOnInit(): void {
+    if (window.localStorage.getItem('USER')){
+      this.checkLogin=true;
+    }
     this.search.city='Địa chỉ'
     this.search.sex='Giới tính'
     this.pageFindAll({page:0 ,size:12})
@@ -69,5 +78,13 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result){
+       this.router.navigate(['login'])
+      }
+    });
+  }
 
 }

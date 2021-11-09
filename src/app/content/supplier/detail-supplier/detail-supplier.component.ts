@@ -27,6 +27,7 @@ export class DetailSupplierComponent implements OnInit {
     this.supplierService.findById(id).subscribe(data=>{
       this.supplier=data;
      this.changeImage= this.supplier.user.avatar
+      console.log( '111111111',this.supplier);
     })
   }
 

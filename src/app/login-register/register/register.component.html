@@ -2,6 +2,7 @@
   <div class="col-12" style="margin-top: 20px" >
     <mat-card style="margin: 20px 0">
       <form class="form-register" #f="ngForm" (ngSubmit)="f.form.valid && ngSubmit()" novalidate>
+        <br><br><br>
         <mat-card-title class="alert alert-primary" style="font-size: 30px">Đăng ký</mat-card-title>
         <mat-error>{{status}}</mat-error>
         <!--    UserName-->
@@ -49,7 +50,7 @@
             <mat-error *ngIf="phoneNumber.hasError('required')">Ô số điện thoại đang bị bỏ trống, vui lòng điền!</mat-error>
           </mat-form-field>
           <br>
-          <button mat-stroked-button color="primary" class="mat-raised-button ">Submit</button>
+          <button mat-stroked-button color="primary" class="mat-raised-button ">Đăng ký</button>
         </p>
       </form>
     </mat-card>
