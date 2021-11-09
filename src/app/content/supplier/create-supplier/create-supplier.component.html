@@ -11,7 +11,7 @@
               <h5 for="email">Họ và tên : </h5>
               <input type="email" class="form-control" formControlName="name" placeholder="Nhập tên của bạn" id="email"
                      style="width: 250px">
-              <p *ngIf="!ccdvForm.get('name')?.valid && ccdvForm.get('name')?.touched " style="color: red">không thể để
+              <p *ngIf="!supForm.get('name')?.valid && supForm.get('name')?.touched " style="color: red">không thể để
                 trống</p>
             </div>
           </td>
@@ -31,7 +31,7 @@
                   <option value="Nam">Nam</option>
                   <option value="Nu">Nữ</option>
                 </select>
-                <p *ngIf="!ccdvForm.get('gender')?.valid && ccdvForm.get('gender')?.touched" style="color: red">không thể để
+                <p *ngIf="!supForm.get('gender')?.valid && supForm.get('gender')?.touched" style="color: red">không thể để
                   trống</p>
 
               </div>
@@ -46,7 +46,7 @@
                 <option value="" disabled selected>Chọn thành phố</option>
                 <option *ngFor="let item of city" value="{{item.name}}">{{item.name}}</option>
               </select>
-              <p *ngIf="!ccdvForm.get('city')?.valid && ccdvForm.get('city')?.touched" style="color: red">không thể để
+              <p *ngIf="!supForm.get('city')?.valid && supForm.get('city')?.touched" style="color: red">không thể để
                 trống</p>
             </div>
           </td>
@@ -55,7 +55,7 @@
             <div class="form-group">
               <h5>Quốc gia : </h5>
               <input style="width: 250px" class="form-control" placeholder="Nhập quốc gia" formControlName="nationality">
-              <p *ngIf="!ccdvForm.get('nationality')?.valid && ccdvForm.get('nationality')?.touched" style="color: red">
+              <p *ngIf="!supForm.get('nationality')?.valid && supForm.get('nationality')?.touched" style="color: red">
                 không thể để trống</p>
             </div>
           </td>
@@ -72,7 +72,7 @@
               <h5>Chiều cao : </h5>
               <input style="width: 250px" type="number" class="form-control" placeholder="Nhập chiều cao (cm)"
                      formControlName="height">
-              <p *ngIf="!ccdvForm.get('height')?.valid && ccdvForm.get('height')?.touched" style="color: red">phải cao hơn
+              <p *ngIf="!supForm.get('height')?.valid && supForm.get('height')?.touched" style="color: red">phải cao hơn
                 1m</p>
 
             </div>
@@ -82,7 +82,7 @@
               <h5>Cân nặng : </h5>
               <input style="width: 250px" type="number" class="form-control" placeholder="Nhập cân nặng (kg)"
                      formControlName="weight">
-              <p *ngIf="!ccdvForm.get('weight')?.valid && ccdvForm.get('weight')?.touched" style="color: red">phải nặng
+              <p *ngIf="!supForm.get('weight')?.valid && supForm.get('weight')?.touched" style="color: red">phải nặng
                 hơn 30 kg</p>
             </div>
           </td>
@@ -90,7 +90,7 @@
             <div class="form-group">
               <h5>Sở thích : </h5>
               <input style="width: 250px" class="form-control" placeholder="Nhập sở thích" formControlName="hobby">
-              <p *ngIf="!ccdvForm.get('hobby')?.valid && ccdvForm.get('hobby')?.touched" style="color: red">ít nhất 10 kí
+              <p *ngIf="!supForm.get('hobby')?.valid && supForm.get('hobby')?.touched" style="color: red">ít nhất 10 kí
                 tự</p>
             </div>
           </td>
@@ -107,7 +107,7 @@
             <div class="form-group">
               <h5>Link facebook : </h5>
               <input style="width: 250px" class="form-control" placeholder="Nhập Link FB" formControlName="linkFb">
-              <p *ngIf="!ccdvForm.get('linkFb')?.valid && ccdvForm.get('linkFb')?.touched" style="color: red">k đc để
+              <p *ngIf="!supForm.get('linkFb')?.valid && supForm.get('linkFb')?.touched" style="color: red">k đc để
                 trống</p>
             </div>
           </td>
@@ -116,7 +116,7 @@
               <h5>Giá : </h5>
               <input style="width: 250px" type="number" class="form-control" placeholder="Nhập giá (đ/h)"
                      formControlName="price">
-              <p *ngIf="!ccdvForm.get('price')?.valid && ccdvForm.get('price')?.touched" style="color: red">ít nhất 70k
+              <p *ngIf="!supForm.get('price')?.valid && supForm.get('price')?.touched" style="color: red">ít nhất 70k
                 nhiều nhất 500k</p>
             </div>
           </td>
@@ -127,7 +127,7 @@
               <h5>Miêu tả : </h5>
               <textarea class="form-control" placeholder="Nhập mô tả về bạn" formControlName="description" cols="2"
                         rows="5"></textarea>
-              <p *ngIf="!ccdvForm.get('description')?.valid && ccdvForm.get('description')?.touched" style="color: red">ít nhất 10 kí tự</p>
+              <p *ngIf="!supForm.get('description')?.valid && supForm.get('description')?.touched" style="color: red">ít nhất 10 kí tự</p>
             </div>
           </td>
         </tr>
@@ -136,7 +136,7 @@
           <td></td>
           <td style="float: right">
             <a class="btn btn-secondary ml-3" href="/">Quay lại</a>
-            <button type="submit" class="btn btn-primary ml-3" [disabled]="ccdvForm.invalid">Chỉnh sửa</button>
+            <button type="submit" class="btn btn-primary ml-3" [disabled]="supForm.invalid">Chỉnh sửa</button>
           </td>
         </tr>
       </table>

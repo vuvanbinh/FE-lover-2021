@@ -19,6 +19,10 @@ import { HomeComponent } from './content/home/home.component';
 import {httpInterceptorProviders} from "./security/auth.interceptor";
 import {EditSupplierComponent} from "./content/supplier/edit-supplier/edit-supplier.component";
 import {CreateSupplierComponent} from "./content/supplier/create-supplier/create-supplier.component";
+import { CreateComponent } from './content/services/create/create.component';
+import { EditComponent } from './content/services/edit/edit.component';
+
+let ServicesComponent;
 
 @NgModule({
   declarations: [
@@ -29,7 +33,9 @@ import {CreateSupplierComponent} from "./content/supplier/create-supplier/create
     RegisterComponent,
     HomeComponent,
     EditSupplierComponent,
-    CreateSupplierComponent
+    CreateSupplierComponent,
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

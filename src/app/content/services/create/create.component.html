@@ -1,0 +1,27 @@
+<h1>Tạo danh mục mới</h1>
+<form [formGroup]="supForm" (ngSubmit)="submit()">
+  <table>
+    <tr>
+      <td>Mã danh mục:</td>
+      <td><input type="text" formControlName="id"></td>
+    </tr>
+    <tr>
+      <td>Tên danh mục:</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Giá:</td>
+      <td><input type="number" formControlName="price"></td>
+    </tr>
+    <tr>
+      <td><select>
+        <option value="">Miễn phí</option>
+        <option value="">Nâng cao</option>
+      </select></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Tạo mới</button></td>
+    </tr>
+  </table>
+</form>

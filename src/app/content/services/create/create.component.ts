@@ -3,14 +3,18 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {SupplierService} from "../../../service/supplier/supplier.service";
 
 @Component({
-  selector: 'app-create-supplier',
-  templateUrl: './create-supplier.component.html',
-  styleUrls: ['./create-supplier.component.scss']
+  selector: 'app-create',
+  templateUrl: './create.component.html',
+  styleUrls: ['./create.component.scss']
 })
-export class CreateSupplierComponent implements OnInit {
+export class CreateComponent implements OnInit {
+
   supForm: FormGroup = new FormGroup({
     id: new FormControl(),
     name: new FormControl(),
+    price: new FormControl(),
+    typeServices: new FormControl()
+
   });
   constructor(private supService: SupplierService ) { }
 
@@ -21,4 +25,5 @@ export class CreateSupplierComponent implements OnInit {
     this.supService.saveSupplier(category);
     this.supForm.reset();
   }
+
 }
