@@ -74,19 +74,19 @@
         </div>
         <div class="row">
           <div class="column" *ngFor="let sup of suppliers">
-            <div >
+            <div>
               <a [routerLink]="['/detail-supplier/',sup.id]">
                 <img class="img" [src]="sup.user.avatar" alt=""><br><br>
                 <i style="font-size: 1.5vw; color: crimson">{{sup.name}}</i>  <br>
               </a>
 
-              <b>Mô tả: </b><button style="margin-left: 150px ;border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white" [routerLink]="['/order-create/',sup.id]">Thuê ngay</button><br>
+              <b>Mô tả: </b><br>
               <i>{{sup.description}}</i><br>
               <b>Dịch vụ cung cấp: </b>
               <p *ngFor="let ser of sup.services">
                 <i>{{ser.name}}</i>
               </p>
-              <p>View: <b style="font-size: 22px;color: #ff7f48"> {{sup.view}}</b></p><br>
+              <p>View: <b style="font-size: 22px;color: #ff7f48"> {{sup.view}}</b><button type="button"  style="margin-left: 120px ;border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white"  [routerLink]="['/order-create/',sup.id]">Thuê ngay</button></p><br>
 
             </div>
           </div>

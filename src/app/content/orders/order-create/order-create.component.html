@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <div class="col-12" style="margin-top: 30px;text-align: center">
@@ -33,7 +34,7 @@
         </mat-form-field>
         <br>
 
-        <p>Thành tiền {{order.totalMoney}} k</p>
+
 
 <!--        hourStart-->
         <mat-form-field appearance="outline">
@@ -46,10 +47,11 @@
         <br>
 
 <!--        dayStart-->
-        Ngày: <input type="date" [(ngModel)]="order.dayStart" style="width: 45%;height: 50px">
+         <input type="date" [(ngModel)]="order.dayStart" style="width: 50%;height: 50px" value="ngày">
         <br>
         <br>
-
+        <a  style="margin-left: 600px ">Thành tiền: </a>
+        <a  style="margin-left: 1px ;color: red">  {{order.totalMoney}} (đ)</a>
         <p>
           <button mat-stroked-button color="primary" class="mat-raised-button " (click)="createOrder()">Thuê dịch vụ</button>
         </p>
