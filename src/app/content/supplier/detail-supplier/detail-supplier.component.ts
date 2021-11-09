@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {Supplier} from "../../../model/Supplier";
 import {SupplierService} from "../../../service/supplier/supplier.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
+import {DialogComponent} from "../../../dialog/dialog/dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-detail-supplier',
@@ -9,13 +11,19 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./detail-supplier.component.scss']
 })
 export class DetailSupplierComponent implements OnInit {
+  checkLogin: boolean=false;
   supplier:any;
   changeImage?:HTMLImageElement;
 
   constructor(private supplierService:SupplierService,
-              private activatedRoute:ActivatedRoute) { }
+              private activatedRoute:ActivatedRoute,
+              private dialog:MatDialog,
+              private router: Router) { }
 
   ngOnInit(): void {
+    if (window.localStorage.getItem('USER')){
+      this.checkLogin=true;
+    }
     this.activatedRoute.paramMap.subscribe(supId=>{
       const id = parseInt(<string>supId.get('id'));
       this.getSupplier(id);
@@ -31,8 +39,17 @@ export class DetailSupplierComponent implements OnInit {
     })
   }
 
-
   changeAvatar(img: HTMLImageElement) {
     this.changeImage=img;
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+      if (result){
+        this.router.navigate(['login'])
+      }
+    });
+  }
+
 }

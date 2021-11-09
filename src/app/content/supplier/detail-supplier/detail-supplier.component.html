@@ -67,9 +67,13 @@
             <th></th>
             <th></th>
             <th>
-              <button style="border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white"
+              <button *ngIf="checkLogin" style="border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white"
                       [routerLink]="['/order-create/',supplier.id]">Thuê ngay
               </button>
+              <button *ngIf="!checkLogin" style="border-radius: 50px;height: 40px;width: 90px ;background-color: #e26161;color: white"
+                      (click)="openDialog()">Thuê ngay
+              </button>
+
             </th>
           </tr>
         </table>
