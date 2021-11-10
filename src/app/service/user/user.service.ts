@@ -38,7 +38,7 @@ export class UserService {
     return this.http.post<any>(this.API_USERS+'/block/'+id,id);
   }
     getFindAll(): Observable<Order[]> {
-      return this.http.get<Order[]>(this.API_USERS+ `/allOrder`)
+      return this.http.get<Order[]>(this.API_USERS+ `/findAllByUser`)
     }
 
     getAllAccomplished(): Observable<Order[]> {

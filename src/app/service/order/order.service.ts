@@ -15,5 +15,8 @@ export class OrderService {
     return this.http.post<any>(this.API_ORDER,order);
   }
 
+  // changeStatusOrder(id:number):Observable<any>{
+  //   return this.http.put<any>(this.API_ORDER + `changeOrderStatus/id`);
+  // }
 
 }
