@@ -12,11 +12,11 @@
           <div>
             <p *ngIf="(supplier.active)">
               <button class="button-changeIsActive" style="font-size: 30px" mat-raised-button color="primary"
-                      (click)="changeIsActive()">Sẵn sàng
+                      (click)="changeIsActive()">Đang hoạt động
               </button>
             </p>
             <p *ngIf="(supplier.active==false) " style="font-size: 30px">
-              <button style="font-size: 30px" mat-raised-button color="warn" (click)="changeIsActive()">Tạm ngưng
+              <button style="font-size: 30px" mat-raised-button color="warn" (click)="changeIsActive()">Đang tạm nghỉ
               </button>
             </p>
           </div>
@@ -158,7 +158,7 @@
                     <td mat-cell *matCellDef="let element">
                       <button mat-raised-button color="primary" *ngIf="element.statusOrder=='Chờ phản hồi'" (click)="changeStatusOrder(element.id)">Xác nhận</button>
                       <button mat-raised-button color="primary" *ngIf="element.statusOrder=='Đã nhận'" (click)="changeStatusOrder(element.id)">Nhận tiền</button>
-                      <button mat-raised-button color="primary" *ngIf="element.statusOrder=='Đã hoàn thành'" (click)="getMoney()">Báo cáo</button>
+                      <button mat-raised-button color="primary" *ngIf="element.statusOrder=='Đã hoàn thành'" (click)="getMoney()">Nhận tiền</button>
                     </td>
                   </ng-container>
 

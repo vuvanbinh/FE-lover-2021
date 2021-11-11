@@ -45,6 +45,9 @@ import { AdminOrderDetailComponent } from './content/admin/admin-order-detail/ad
 import { UpdateAvatarComponent } from './content/user/update-avatar/update-avatar.component';
 import { LogoutDialogComponent } from './dialog/logout-dialog/logout-dialog.component';
 import { RegisterSuccessComponent } from './dialog/register-success/register-success.component';
+import { ErorrIsBlockComponent } from './dialog/erorr-is-block/erorr-is-block.component';
+import { OrderSuccessDialogComponent } from './dialog/order-success-dialog/order-success-dialog.component';
+import { BrowserMoneyDialogComponent } from './dialog/browser-money-dialog/browser-money-dialog.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +74,9 @@ import { RegisterSuccessComponent } from './dialog/register-success/register-suc
     UpdateAvatarComponent,
     LogoutDialogComponent,
     RegisterSuccessComponent,
+    ErorrIsBlockComponent,
+    OrderSuccessDialogComponent,
+    BrowserMoneyDialogComponent,
   ],
   imports: [
     BrowserModule,

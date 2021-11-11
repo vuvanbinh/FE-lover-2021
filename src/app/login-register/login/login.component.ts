@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../service/user/user.service";
 import {SignInForm} from "../../model/SignInForm";
 import {Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {ErorrIsBlockComponent} from "../../dialog/erorr-is-block/erorr-is-block.component";
 
 @Component({
   selector: 'app-login',
@@ -14,20 +16,23 @@ export class LoginComponent implements OnInit {
   hide = true;
 
   constructor(private userService: UserService,
-              private router: Router) {
+              private router: Router,
+              private dialog: MatDialog) {
   }
 
   ngOnInit(): void {
 
   }
 
-  message = {message: "no"}
 
   ngSubmit() {
     this.userService.signIn(this.sigInForm).subscribe(data => {
-
-      if (JSON.stringify(data) === JSON.stringify(this.message)) {
-        this.status = 'Sai tên đăng nhập hoặc mật khẩu mời nhập lại'
+      if (JSON.stringify(data) === JSON.stringify({message:"no"})) {
+        this.status = 'Sai tên đăng nhập hoặc mật khẩu mời nhập lại';
+        return;
+      }else if(JSON.stringify(data)===JSON.stringify({message:"isBlock"})){
+        this.dialog.open(ErorrIsBlockComponent);
+        return;
       } else {
         window.localStorage.setItem('USER', JSON.stringify(data))
         window.localStorage.setItem('AVATAR',data.avatar);

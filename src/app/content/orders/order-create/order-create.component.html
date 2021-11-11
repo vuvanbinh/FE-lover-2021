@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-12" style="margin-top: 30px;text-align: center">
+    <div class="col-12" style="margin-top: 30px;text-align: center"><br><br>
       <mat-card style="margin: 50px">
         <mat-card-title class="alert alert-primary">Thuê người</mat-card-title>
         <br>
@@ -27,7 +27,7 @@
 <!--        totalTime-->
         <br>
         <mat-form-field appearance="outline">
-          <mat-label>Nhập thời gian thuê :</mat-label>
+          <mat-label>Nhập thời gian thuê/ tiếng:</mat-label>
           <input (change)="calculate()" type="number" matInput name="totalTime" [(ngModel)]="order.totalTime"
                  required #totalTime="ngModel">
           <mat-error *ngIf="totalTime.hasError('required')">Thời gian đang bỏ trống, vui lòng điền lại!</mat-error>
@@ -50,8 +50,8 @@
          <input type="date" [(ngModel)]="order.dayStart" style="width: 50%;height: 50px" value="ngày">
         <br>
         <br>
-        <a  style="margin-left: 600px ">Thành tiền: </a>
-        <a  style="margin-left: 1px ;color: red">  {{order.totalMoney}} (đ)</a>
+        <a  style="margin-left: 600px ;text-align: right">Thành tiền: </a>
+        <a  style="margin-left: 1px ;color: red">  {{order.totalMoney}} (usd)</a>
         <p>
           <button mat-stroked-button color="primary" class="mat-raised-button " (click)="createOrder()">Thuê dịch vụ</button>
         </p>

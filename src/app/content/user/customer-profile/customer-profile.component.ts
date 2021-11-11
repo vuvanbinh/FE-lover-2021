@@ -32,13 +32,15 @@ export class CustomerProfileComponent implements OnInit {
   }
 
   changeStatusOrder(id: number) {
-    console.log('--------id-----',id)
-    this.orderService.changeOrderStatus(id).subscribe(data => {
-      if (JSON.stringify(data)===JSON.stringify({message:"Update success!"})){
-        this.findAllOrderBySupplier();
-        this.dataSource = new MatTableDataSource<any>(this.dataSource);
-        this.dataSource.paginator = this.paginator;
-      }
-    })
+    let conf = confirm("Xác nhận hoàn thành đơn này?");
+    if (conf){
+      this.orderService.changeOrderStatus(id).subscribe(data => {
+        if (JSON.stringify(data)===JSON.stringify({message:"Update success!"})){
+          this.findAllOrderBySupplier();
+          this.dataSource = new MatTableDataSource<any>(this.dataSource);
+          this.dataSource.paginator = this.paginator;
+        }
+      })
+    }else return
   }
 }

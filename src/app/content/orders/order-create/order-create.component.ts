@@ -6,6 +6,7 @@ import {FormControl} from "@angular/forms";
 import {OrderService} from "../../../service/order/order.service";
 import {MatDialog} from "@angular/material/dialog";
 import {DialogComponent} from "../../../dialog/dialog/dialog.component";
+import {OrderSuccessDialogComponent} from "../../../dialog/order-success-dialog/order-success-dialog.component";
 
 @Component({
   selector: 'app-order-create',
@@ -65,7 +66,7 @@ export class OrderCreateComponent implements OnInit {
     console.log(this.order)
     this.oderService.create(this.order).subscribe(data=>{
       if (JSON.stringify(data)===JSON.stringify({message:"Create success!"})){
-        this.status='Đăng ký thuê thành công, đang chờ xác nhận từ người cung cấp dịch vụ';
+        this.dialog.open(OrderSuccessDialogComponent);
       }
     })
   }

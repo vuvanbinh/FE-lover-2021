@@ -5,6 +5,8 @@ import {MatTableDataSource} from "@angular/material/table";
 import {Router} from "@angular/router";
 import {UserService} from "../../../service/user/user.service";
 import {OrderService} from "../../../service/order/order.service";
+import {BrowserMoneyDialogComponent} from "../../../dialog/browser-money-dialog/browser-money-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-admin-page',
@@ -20,7 +22,8 @@ export class AdminPageComponent implements OnInit {
   constructor(private supplierService: SupplierService,
               private userService:UserService,
               private router: Router,
-              private orderService:OrderService) {
+              private orderService:OrderService,
+              private dialog:MatDialog) {
   }
 
   ngOnInit(): void {
@@ -102,8 +105,22 @@ export class AdminPageComponent implements OnInit {
 
       })
     }
+  browser(id: number,supplierName:string) {
+     const dialogRef= this.dialog.open(BrowserMoneyDialogComponent);
+     dialogRef.afterClosed().subscribe(result=>{
+       if (result){
+         this.orderService.changeOrderStatus(id).subscribe(data=>{
+           if (JSON.stringify(data)===JSON.stringify({message:"Update success!"})){
+             this.showAllOrder();
+             this.status = 'Thanh toán tiền dịch vụ thành công cho '+supplierName;
+           }
+         })
+       }
+     })
+  }
 
-  browser(id: number) {
 
+  resetStatus() {
+    this.status='';
   }
 }
