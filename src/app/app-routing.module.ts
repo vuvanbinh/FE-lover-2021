@@ -11,6 +11,7 @@ import {SupplierProfileComponent} from "./content/supplier/supplier-profile/supp
 import {OrderCreateComponent} from "./content/orders/order-create/order-create.component";
 import {OderDetailComponent} from "./content/orders/oder-detail/oder-detail.component";
 import {CustomerProfileComponent} from "./content/user/customer-profile/customer-profile.component";
+import {ChangeAvatarComponent} from "./upload/change-avatar/change-avatar.component";
 
 const routes: Routes = [
   {path:'register', component:RegisterComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'profile-supplier',component:SupplierProfileComponent},
   {path:'order-create/:id',component:OrderCreateComponent},
   {path:'order-detail/:id',component:OderDetailComponent},
-  {path:'customer-profile', component:CustomerProfileComponent}
+  {path:'customer-profile', component:CustomerProfileComponent},
+  {path:'change-avatar',component:ChangeAvatarComponent}
 
 
 

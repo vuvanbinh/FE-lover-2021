@@ -26,8 +26,6 @@ export class NavComponent implements OnInit {
 
   }
 
-
-
   logOut() {
     if (confirm("Bạn muốn thoát đăng nhập?.")) {
       window.localStorage.clear();

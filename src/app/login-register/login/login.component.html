@@ -11,7 +11,7 @@
           <p>
             <mat-form-field style="width: 400px" appearance="outline">
               <mat-label>Tên đăng nhập:</mat-label>
-              <input matInput placeholder="Placeholder" name="username" [(ngModel)]="sigInForm.username"
+              <input matInput placeholder="User name" name="username" [(ngModel)]="sigInForm.username"
                      required #username="ngModel" minlength="3" maxlength="20">
               <mat-error *ngIf="username.hasError('required')">Ô nhập tên đang bị bỏ trống, vui lòng điền!</mat-error>
               <mat-error *ngIf="username.hasError('minlength')">Độ dài của tên phải là từ 3 đến 20 ký tự</mat-error>

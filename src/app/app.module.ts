@@ -41,6 +41,7 @@ import { OderDetailComponent } from './content/orders/oder-detail/oder-detail.co
 import { FeddbackDialogComponent } from './dialog/feddback-dialog/feddback-dialog.component';
 import { GetMoneyDialogComponent } from './dialog/get-money-dialog/get-money-dialog.component';
 import { CustomerProfileComponent } from './content/user/customer-profile/customer-profile.component';
+import { ChangeAvatarComponent } from './upload/change-avatar/change-avatar.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { CustomerProfileComponent } from './content/user/customer-profile/custom
     FeddbackDialogComponent,
     GetMoneyDialogComponent,
     CustomerProfileComponent,
+    ChangeAvatarComponent,
   ],
   imports: [
     BrowserModule,
