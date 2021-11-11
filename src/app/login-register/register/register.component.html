@@ -29,6 +29,19 @@
             </button>
           </mat-form-field>
         </p>
+        <p>
+          <mat-form-field style="width: 400px" appearance="outline">
+            <mat-label>Nhập lại mật khẩu:</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="pass"
+                   required #password="ngModel" minlength="6">
+            <mat-error *ngIf="password.hasError('required')">Chưa nhập password, mời nhập vào</mat-error>
+            <mat-error *ngIf="password.hasError('minlength')">Mật khẩu phải 6 kí tự trở lên</mat-error>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+        </p>
+
         <!--Email-->
         <p>
           <mat-form-field style="width: 400px" appearance="outline">

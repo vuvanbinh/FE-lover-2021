@@ -41,6 +41,10 @@ import { OderDetailComponent } from './content/orders/oder-detail/oder-detail.co
 import { FeddbackDialogComponent } from './dialog/feddback-dialog/feddback-dialog.component';
 import { GetMoneyDialogComponent } from './dialog/get-money-dialog/get-money-dialog.component';
 import { CustomerProfileComponent } from './content/user/customer-profile/customer-profile.component';
+import { AdminOrderDetailComponent } from './content/admin/admin-order-detail/admin-order-detail.component';
+import { UpdateAvatarComponent } from './content/user/update-avatar/update-avatar.component';
+import { LogoutDialogComponent } from './dialog/logout-dialog/logout-dialog.component';
+import { RegisterSuccessComponent } from './dialog/register-success/register-success.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +67,10 @@ import { CustomerProfileComponent } from './content/user/customer-profile/custom
     FeddbackDialogComponent,
     GetMoneyDialogComponent,
     CustomerProfileComponent,
+    AdminOrderDetailComponent,
+    UpdateAvatarComponent,
+    LogoutDialogComponent,
+    RegisterSuccessComponent,
   ],
   imports: [
     BrowserModule,

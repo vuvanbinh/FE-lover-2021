@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12" style="margin-top: 30px;text-align: center"><br><br>
+      <mat-card style="margin: 50px" >
+        <mat-card-title class="alert alert-primary">Cập nhật avatar</mat-card-title>
+        <div><p><img [src]="avatar" alt="" style="width: 400px; height: 400px"></p></div>
+        <br><br>
+        <mat-error>{{status}}</mat-error>
+        <p>
+          <app-upload-avatar (giveURLtoCreate)="upLoadAvatar($event)"></app-upload-avatar>
+        </p>
+        <p>
+          <button mat-stroked-button color="primary" class="mat-raised-button" (click)="updateAvatar()">Cập nhật avatar</button>
+        </p>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -5,6 +5,6 @@ export interface SignUpForm{
   phoneNumber?:number,
   avatar?:string,
   joinDate?:any,
-  status?:boolean,
+  isConfirm?:boolean,
   roles?:any
 }

@@ -35,4 +35,8 @@ export class CreateServiceComponent implements OnInit {
       }
     })
   }
+
+  resetStatus() {
+    this.status='';
+  }
 }

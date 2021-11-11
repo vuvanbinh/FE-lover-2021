@@ -32,7 +32,6 @@ export class CreateComponent implements OnInit {
     this.supplierService.create(this.supplier).subscribe(data=>{
       if (JSON.stringify(data)===JSON.stringify(this.message)){
         this.dialog.open(SuccsesDiaglogComponent)
-        // this.status='Đăng ký thông tin cá nhân thành công!';
       }
     })
   }

@@ -1,9 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-12" style="margin-top: 20px">
-      <mat-card style="margin: 50px 0;text-align: center">
-        <mat-card-title class="alert alert-primary" style="font-size: 30px">Đăng ký dịch vụ cung cấp</mat-card-title>
+    <div class="col-12" style="margin-top: 20px"><br><br>
+      <mat-card style="margin: 50px 0;text-align: center" (click)="resetStatus()">
+        <mat-card-title class="alert alert-primary" style="font-size: 30px" >Đăng ký dịch vụ cung cấp</mat-card-title>
         <mat-error *ngIf="status!='' ">{{status}}</mat-error>
+        <br>
         <div style="margin-top: 20px">
           <form #f="ngForm" (ngSubmit)="submit()" >
             <table>
@@ -11,7 +12,7 @@
                 <td>
                   <mat-form-field appearance="outline">
                     <mat-label>Tên dịch vụ</mat-label>
-                    <mat-select [(value)]="services.name" >
+                    <mat-select [(value)]="services.name">
                       <div *ngFor="let ser of serviceName">
                         <mat-option value="{{ser}}">{{ser}}</mat-option>
                       </div>
@@ -38,6 +39,7 @@
               </tr>
             </table>
           </form>
+          <br><br>
         </div>
       </mat-card>
     </div>

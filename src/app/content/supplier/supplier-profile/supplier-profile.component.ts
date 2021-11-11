@@ -119,4 +119,5 @@ export class SupplierProfileComponent implements OnInit {
   getMoney() {
     this.dialog.open(GetMoneyDialogComponent);
   }
+
 }

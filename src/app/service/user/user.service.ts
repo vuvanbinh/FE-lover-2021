@@ -37,4 +37,8 @@ export class UserService {
     return this.http.post<any>(this.API_USERS+'/block/'+id,id);
   }
 
+  updateAvatar(id:number,avatar:string):Observable<any>{
+    return this.http.put<any>(`${this.API_USERS}/changeAvatar/${id}?avatar=${avatar}`,id);
+  }
+
 }

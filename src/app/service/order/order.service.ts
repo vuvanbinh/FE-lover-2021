@@ -35,6 +35,10 @@ export class OrderService {
     return this.http.put<any>(`${this.API_ORDER}/changeOrderStatus/${id}`,id);
   }
 
+  findAll():Observable<any>{
+    return this.http.get<any>(this.API_ORDER);
+  }
+
 
 
 }

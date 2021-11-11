@@ -11,6 +11,9 @@ import {SupplierProfileComponent} from "./content/supplier/supplier-profile/supp
 import {OrderCreateComponent} from "./content/orders/order-create/order-create.component";
 import {OderDetailComponent} from "./content/orders/oder-detail/oder-detail.component";
 import {CustomerProfileComponent} from "./content/user/customer-profile/customer-profile.component";
+import {AdminOrderDetailComponent} from "./content/admin/admin-order-detail/admin-order-detail.component";
+import {UpdateAvatarComponent} from "./content/user/update-avatar/update-avatar.component";
+import {NavComponent} from "./nav-footer/nav/nav.component";
 
 const routes: Routes = [
   {path:'register', component:RegisterComponent},
@@ -23,7 +26,10 @@ const routes: Routes = [
   {path:'profile-supplier',component:SupplierProfileComponent},
   {path:'order-create/:id',component:OrderCreateComponent},
   {path:'order-detail/:id',component:OderDetailComponent},
-  {path:'customer-profile', component:CustomerProfileComponent}
+  {path:'customer-profile', component:CustomerProfileComponent},
+  {path:'admin-order-detail/:id', component:AdminOrderDetailComponent},
+  {path:'update-avatar', component:UpdateAvatarComponent},
+  {path:'nav',component:NavComponent}
 
 
 
